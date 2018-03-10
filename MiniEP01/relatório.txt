@@ -1,0 +1,15 @@
+O programa executa 10000000 acessos a um vetor. Esses acessos se dão de duas maneiras
+diferentes: sequencialmente e aleatoriamente.
+
+No acesso sequencial, não há chance da troca de bloco de memória em cada acesso ao vetor.
+No i-ésimo acesso ao vetor, suponha que há um 'cache miss', então é copiado para o cache
+o bloco de memória, onde a i-ésmia posição do vetor está. Dado esse processo, e o fato
+do acesso sequencial do vetor, a chance do acesso i+1 ser um 'cache hit' é muito alta.
+E mesmo que o acesso i+1 seja um 'cache miss', ao copiarmos o bloco onde a posição i+1
+está, também estaremos compiando a i+2, i+3, ... i+S, onde S é o tamanho do bloco de
+memória.
+
+No acesso aleatório, a chance de trocar de bloco de memória a cada acesso é bem maior.
+Um bloco pode ser copiado para o acesso i, e para o acesso i+1, outro bloco tem que ser
+copiado para o cache, isto aumenta o tempo bastante. Ou seja, já que o acesso aleatório,
+aumenta o número de 'cache miss', o temo de execução também aumenta.
