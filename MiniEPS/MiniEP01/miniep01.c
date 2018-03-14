@@ -33,15 +33,17 @@ void access(int* array, int flag) {
         rnd_access(array);
     end = clock();
 
-    printf("%s took %f\n", fun, time_diff(start, end));
+    return(time_diff(start, end));
 }
 
 int main () {
     int* array = calloc(SIZE, sizeof(int));
     srand(time(NULL));
 
-    access(array, 1);
-    access(array, 0);
+    double seq_time = access(array, 1);
+    double rnd_time = access(array, 0);
+
+    printf("The difference is: %f%\n", (rnd_time/seq_time - 1) * 100);
 
     return 0;
 }
