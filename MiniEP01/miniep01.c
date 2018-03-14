@@ -24,7 +24,7 @@ double time_diff(clock_t a, clock_t b) {
 void access(int* array, int flag) {
     clock_t start, end;
 
-    char *fun = flag == 1? "Sequencial" : "Aleatória";
+    char *fun = flag == 1? "Sequencial" : "Random";
 
     start = clock();
     if (flag == 1)
