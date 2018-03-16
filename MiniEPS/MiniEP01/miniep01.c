@@ -21,7 +21,7 @@ double time_diff(clock_t a, clock_t b) {
         return (((double) (b - a)) / CLOCKS_PER_SEC);
 }
 
-void access(int* array, int flag) {
+double access(int* array, int flag) {
     clock_t start, end;
 
     char *fun = flag == 1? "Sequencial" : "Random";
@@ -43,7 +43,10 @@ int main () {
     double seq_time = access(array, 1);
     double rnd_time = access(array, 0);
 
-    printf("The difference is: %f%\n", (rnd_time/seq_time - 1) * 100);
+    printf("Sequencial access took %f\n", seq_time);
+    printf("Random access took %f\n", rnd_time);
+
+    printf("The improvement is: %.2f%\n", (rnd_time/seq_time - 1) * 100);
 
     return 0;
 }
