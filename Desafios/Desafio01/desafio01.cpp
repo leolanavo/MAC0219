@@ -24,8 +24,7 @@ double access(int array[], int flag) {
     clock_t start, end;
 
     const char* fun = flag == 1? "Fixed" : "Variant";
-    double threshold = flag == 1? 1 :  rand()/(double)RAND_MAX;
-    printf("Threshold: %f\n", threshold);
+    double threshold = flag == 1? 1 :  0.30;
 
     start = clock();
     access_with_threshold(array, threshold);
@@ -41,11 +40,12 @@ int main() {
     for (int i = 0; i < SIZE; i++)
         array[i] = 0;
 
-    double fixed_time = access(array, 1); 
-    double var_time = access(array, 0); 
-    printf("Fix: %f | Var: %f\n", fixed_time, var_time);
-    
-    printf("The difference is: %f%\n", (var_time/fixed_time - 1) * 100);
+    double fixed_time = access(array, 1);
+    double var_time = access(array, 0);
+    printf("With branch prediction: %f\n", fixed_time);
+    printf("Without branch prediction: %f\n", var_time);
+
+    printf("The difference is: %.2f%\n", (var_time/fixed_time - 1) * 100);
 
     return 0;
 }

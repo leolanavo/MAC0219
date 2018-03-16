@@ -1,13 +1,12 @@
 O programa faz vários acessos a um vetor, que consistem em somar 1 em cada
-posição do vetor. Porém o bloco de código que realiza estes acessos é
+posição do vetor. Porém o bloco de código (if-else) que realiza estes acessos é
 controlado por uma variável aleatória, dependendo do valor sorteado, um
 determinado bloco é executado.
 
-O primeiro conjunto de acessos é sempre feito pelo primeiro bloco, já que a
+O primeiro conjunto de acessos é sempre feito pelo primeiro bloco (if), já que a
 a variável aleatória tem que ser menor ou igual a RAND_MAX, o que é sempre
 verdade. Aproveitando o 'branch prediction'.
 
 O segundo conjunto de acessos é feito aleatóriamente entre os dois blocos,
-aumenta a variação entre os acessos, prejudicando a branch prediction. E o
-quanto mais menor for a probabilidade de troca entre os blocos, menor é a
-diferença.
+aumentando a variação entre os acessos, prejudicando a branch prediction. E o
+quanto menor for a probabilidade de troca entre os blocos, menor é a diferença.
