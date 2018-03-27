@@ -3,19 +3,17 @@
 
 using namespace std;
 
-int free_rock;
-
 class Amphibian {
     public:
         bool animal_id;
         int rock;
         pthread_t th;
 
-        Amphibian(short unsigned int animal_id, int rock, int size);
+        Amphibian(bool animal_id, int rock);
 
-        bool can_jump(int size);
+        bool can_jump();
 
-        void jump(int size);
+        static void* jump(void* instance);
 };
 
 #endif
