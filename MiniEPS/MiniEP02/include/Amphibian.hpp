@@ -11,6 +11,10 @@ class Amphibian {
 
         Amphibian(bool animal_id, int rock);
 
+        void execute_thread();
+
+        bool finished();
+
         bool can_jump();
 
         static void* jump(void* instance);

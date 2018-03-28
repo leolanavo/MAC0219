@@ -24,13 +24,10 @@ int main (int argc, char* argv[]) {
     pthread_create(&judge, NULL, deadlock_check, NULL);
 
     Lake l(n, m);
-        cout << "--" << endl;
-    for (int i = 0; i < n_rocks - 1; i++)
-        cout << l.animals[i].rock << endl;
 
-    // for (int i = 0; i < n_rocks; i++) {
-        // pthread_join(l.animals[i].th, NULL);
-    // }
+    for (int i = 0; i < n_rocks - 1; i++) {
+        pthread_join(l.animals[i].th, NULL);
+    }
 
     if (l.success()) {
         cout << "Finished with success" << endl;
