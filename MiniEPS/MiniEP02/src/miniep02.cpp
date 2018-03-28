@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <pthread.h>
+#include <unistd.h>
 
 #include "Lake.hpp"
 #include "Amphibian.hpp"
@@ -10,9 +11,11 @@
 using namespace std;
 
 void* deadlock_check(void* arg) {
-    if (counter > 100) {
-        cout << "Deadlock" << endl;
-        exit(1);
+    while(1) {
+        if (counter > 100) {
+            cout << "Deadlock" << endl;
+            exit(1);
+        }
     }
 }
 
@@ -24,6 +27,8 @@ int main (int argc, char* argv[]) {
     pthread_create(&judge, NULL, deadlock_check, NULL);
 
     Lake l(n, m);
+
+    sleep(1);
 
     for (int i = 0; i < n_rocks - 1; i++) {
         pthread_join(l.animals[i].th, NULL);

@@ -20,7 +20,6 @@ void Amphibian::execute_thread() {
 
 bool Amphibian::can_jump() {
     short int offset = animal_id == 1? 1 : -1;
-
     if ((rock + 2*offset == free_rock && validate_index(n_rocks, rock + 2*offset)) ||
         (rock + offset == free_rock && validate_index(n_rocks, rock + offset))) {
         counter = 0;
@@ -36,15 +35,27 @@ bool Amphibian::finished() {
         (animal_id == FROG && rock >= n_rocks/2))
         return false;
 
-    int direction = animal_id == TOAD? 1 : -1;
-    int limit = animal_id == TOAD? n_rocks : -1;
+    // int direction = animal_id == TOAD? 1 : -1;
+    // int limit = animal_id == TOAD? n_rocks : -1;
 
 
-    for (int i = rock; i != limit; i += direction) {
-        cout << i << endl;
-        if (rocks[i] != animal_id)
-            return false;
-    }
+    // for (int i = rock; i != limit; i += direction) {
+        // if (rocks[i] != animal_id)
+            // return false;
+    // }
+
+    // print_vector(rocks);
+    // cout << rock << " | " << animal_id << " | " << rocks[rock] << endl;
+    if (animal_id == TOAD)
+        for (int i = rock; i < n_rocks; i++)
+            if (rocks[i] != animal_id)
+                return false;
+
+    if (animal_id == FROG)
+        for (int i = rock; i >= 0; i--)
+            if (rocks[i] != animal_id)
+                return false;
+
 
     return true;
 }
@@ -56,6 +67,7 @@ void* Amphibian::jump(void* instance) {
         pthread_mutex_lock(&mutex);
 
         if (amp->can_jump()) {
+            cout << "pulou de " << free_rock << " para " << amp->rock << endl;
             int tmp = amp->rock;
 
             rocks[tmp] = -1;
@@ -67,4 +79,5 @@ void* Amphibian::jump(void* instance) {
         }
         pthread_mutex_unlock(&mutex);
     }
+    print_vector(rocks);
 }

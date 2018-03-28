@@ -40,6 +40,7 @@ Lake::Lake (int n_toads, int n_frogs) {
     for (int i = 0; i < n_rocks - 1; i++)
         rnd_animals[i].execute_thread();
 
+
 }
 
 bool Lake::success() {
