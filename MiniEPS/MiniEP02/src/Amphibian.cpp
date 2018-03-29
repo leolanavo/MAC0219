@@ -9,19 +9,19 @@
 
 using namespace std;
 
-Amphibian::Amphibian (bool animal_id, int rock) {
+Amphibian::Amphibian (bool animal_id, int rock, int index) {
     this->animal_id = animal_id;
     this->rock = rock;
+    this->index = index;
 }
 
-void Amphibian::execute_thread() {
-    pthread_create(&th, NULL, jump, this);
+void Amphibian::execute_thread(int i) {
+    pthread_create(&th, NULL, &jump, &i);
 }
 
 bool Amphibian::can_jump() {
-    short int offset = animal_id == 1? 1 : -1;
-    if ((rock + 2*offset == free_rock && validate_index(n_rocks, rock + 2*offset)) ||
-        (rock + offset == free_rock && validate_index(n_rocks, rock + offset))) {
+    short int offset = animal_id == TOAD? 1 : -1;
+    if ((rock + 2*offset == free_rock) || (rock + offset == free_rock)) {
         counter = 0;
         return true;
     }
@@ -31,53 +31,51 @@ bool Amphibian::can_jump() {
 }
 
 bool Amphibian::finished() {
-    if ((animal_id == TOAD && rock <= n_rocks/2) ||
-        (animal_id == FROG && rock >= n_rocks/2))
+
+    cout << __LINE__ << endl;
+    if ((animal_id == TOAD && rock <= initial_free_rock) ||
+        (animal_id == FROG && rock >= initial_free_rock)) {
+        cout << __LINE__ << endl;
         return false;
+    }
 
-    // int direction = animal_id == TOAD? 1 : -1;
-    // int limit = animal_id == TOAD? n_rocks : -1;
-
-
-    // for (int i = rock; i != limit; i += direction) {
-        // if (rocks[i] != animal_id)
-            // return false;
-    // }
-
-    // print_vector(rocks);
-    // cout << rock << " | " << animal_id << " | " << rocks[rock] << endl;
+    cout << __LINE__ << endl;
     if (animal_id == TOAD)
-        for (int i = rock; i < n_rocks; i++)
+        for (int i = rock; i < rocks.size(); i++)
             if (rocks[i] != animal_id)
                 return false;
 
+    cout << __LINE__ << endl;
     if (animal_id == FROG)
         for (int i = rock; i >= 0; i--)
             if (rocks[i] != animal_id)
                 return false;
+    cout << __LINE__ << endl;
 
 
     return true;
 }
 
-void* Amphibian::jump(void* instance) {
-    Amphibian* amp = (Amphibian*) instance;
+void* Amphibian::jump(void* index) {
+    int i = *((int*) index);
+    cout << __LINE__ << endl;
 
-    while (!amp->finished()) {
+    while (animals[i].finished()) {
+    cout << __LINE__ << endl;
         pthread_mutex_lock(&mutex);
+    cout << __LINE__ << endl;
 
-        if (amp->can_jump()) {
-            cout << "pulou de " << free_rock << " para " << amp->rock << endl;
-            int tmp = amp->rock;
+        if (animals[i].can_jump()) {
+            cout << "pulou de " << free_rock << " para " << animals[i].rock << endl;
+            int tmp = animals[i].rock;
 
             rocks[tmp] = -1;
-            rocks[free_rock] = amp->animal_id;
+            rocks[free_rock] = animals[i].animal_id;
 
-            amp->rock = free_rock;
+            animals[i].rock = free_rock;
             free_rock = tmp;
 
         }
         pthread_mutex_unlock(&mutex);
     }
-    print_vector(rocks);
 }

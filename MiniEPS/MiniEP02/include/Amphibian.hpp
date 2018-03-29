@@ -7,17 +7,18 @@ class Amphibian {
     public:
         bool animal_id;
         int rock;
+        int index;
         pthread_t th;
 
-        Amphibian(bool animal_id, int rock);
+        Amphibian(bool animal_id, int rock, int index);
 
-        void execute_thread();
+        void execute_thread(int i);
 
         bool finished();
 
         bool can_jump();
 
-        static void* jump(void* instance);
+        static void* jump(void* index);
 };
 
 #endif

@@ -7,8 +7,6 @@
 
 class Lake {
     public:
-        vector<Amphibian> animals;
-        int initial_free_rock;
 
         Lake (int n_toads, int n_frogs);
 

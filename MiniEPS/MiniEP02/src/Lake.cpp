@@ -14,22 +14,20 @@
 Lake::Lake (int n_toads, int n_frogs) {
     n_rocks = n_toads + n_frogs + 1;
     initial_free_rock = free_rock = n_toads;
-    rocks.resize(n_rocks);
 
     for (int i = 0; i < n_rocks; i++) {
         if (i < n_toads) {
-            animals.push_back(Amphibian(TOAD, i));
-            rocks[i] = TOAD;
+            animals.push_back(Amphibian(TOAD, i, i));
+            rocks.push_back(TOAD);
         }
 
         else if (i > n_toads) {
-            animals.push_back(Amphibian(FROG, i));
-            rocks[i] = FROG;
+            animals.push_back(Amphibian(TOAD, i, i - 1));
+            rocks.push_back(FROG);
         }
 
         else {
-            free_rock = i;
-            rocks[i] = -1;
+            rocks.push_back(-1);
         }
     }
 
@@ -38,7 +36,7 @@ Lake::Lake (int n_toads, int n_frogs) {
     random_shuffle(rnd_animals.begin(), rnd_animals.end());
 
     for (int i = 0; i < n_rocks - 1; i++)
-        rnd_animals[i].execute_thread();
+        rnd_animals[i].execute_thread(rnd_animals[i].index);
 
 
 }

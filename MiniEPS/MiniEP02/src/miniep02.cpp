@@ -10,9 +10,11 @@
 
 using namespace std;
 
+#define LIMIT 100
+
 void* deadlock_check(void* arg) {
     while(1) {
-        if (counter > 100) {
+        if (counter > LIMIT) {
             cout << "Deadlock" << endl;
             exit(1);
         }
@@ -31,7 +33,7 @@ int main (int argc, char* argv[]) {
     sleep(1);
 
     for (int i = 0; i < n_rocks - 1; i++) {
-        pthread_join(l.animals[i].th, NULL);
+        pthread_join(animals[i].th, NULL);
     }
 
     if (l.success()) {
