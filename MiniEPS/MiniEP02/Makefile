@@ -1,8 +1,3 @@
-#################################################
-# Leonardo Lana Violin Oliveira - NUSP: 9793735 #
-# Beatriz Figuereido Marouelli  - NUSP: 9793652 #
-#################################################
-
 EXECFLAGS := -O2
 TESTFLAGS := -g
 
@@ -48,10 +43,15 @@ endif
 .PHONY: all
 all: CFLAGS += $(EXECFLAGS)
 all: $(addprefix $(BINDIR)/,$(BIN))
+all: run
 
 .PHONY: debug
 debug: CFLAGS += $(TESTFLAGS)
 debug: $(addprefix $(TSTDIR)/,$(BIN))
+
+.PHONY: run
+run:
+	$(BINDIR)/$(BIN) $(N_TOADS) $(N_FROGS)
 
 # Compile each one of the binaries
 define bin-factory
@@ -83,11 +83,6 @@ $(ROOT) $(BINDIR) $(FINALDIR):
 init: | $(ROOT)
 	@$(ECHO) "Created core directories"
 
-.PHONY: gitignore
-gitignore:
-	@$(ECHO) "Creating the .gitignore..."
-	@$(ECHO) "$(OBJDIR)\n$(FINALDIR)\n$(TXTDIR)\n$(BINDIR)\n$(TSTDIR)\n.git" > .gitignore
-
 .PHONY: clean
 clean:
 	@$(RMDIR) $(BINDIR)
@@ -110,7 +105,6 @@ package: clean | $(FINALDIR)
 	@$(CP) $(LTXDIR) $(FINALDIR)
 	@$(CP) Makefile $(FINALDIR)
 	@$(CP) Config.mk $(FINALDIR)
-	@$(CP) leiame.txt $(FINALDIR)
 
 	@$(ECHO) "Compressing..."
 	@$(TAR) $(TARF).tar.gz $(FINALDIR)

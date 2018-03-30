@@ -14,7 +14,7 @@ marca qual o índice da pedra livre, utilizada para verficar se o animal pode pu
 Após a inicialização dos animais e das variáveis globais. O programa copia o vetor de todos os animais
 e aleatoriza o vetor copiado, a fim de iniciar as threads de forma aleatória.
 
-Cada thread executa o método 'jump' da classe 'Amphibian'. O método recebe um 'void *' que é o índice 
+Cada thread executa o método 'jump' da classe 'Amphibian'. O método recebe um 'void *' que é o índice
 do animal no vetor 'animals'. A partir deste índice, a função seleciona o objeto que será utilizado
 durante sua execução.
 
@@ -25,3 +25,10 @@ quando só houver rãs na frente de uma rã e só sapos antes do sapo. A primeir
 A seção crítica consiste em a thread verificar se o animal pode ou pular. Se pode pular, o animal
 modifica as variáveis necessárias para registrar o 'pulo', modifica a pedra que o animal está,
 a pedra livre e o vetor de pedras.
+
+Toda vez que um animal não consegue pular, o contador do deadlock é incrementado, se o animal consegue
+pular o contador é zerado. Se o contador atigir 10000, o programa declara que houve um deadlock
+e executa um 'exit(1)
+
+Os teste fixo é feito com 4 rãs e 4 sapos. Para mudar o número de sapos e rãs mude o valor das
+variáveis 'N_FROGS' e 'N_TOADS' no arquivo Config.mk.

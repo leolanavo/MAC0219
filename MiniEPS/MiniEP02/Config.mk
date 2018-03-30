@@ -12,7 +12,10 @@
 
 BIN       := a.out
 TARF      := leonardo.lana
-FINALDIR  := ep3-leonardo-beatriz
+FINALDIR  := leonardo.lana
 
 CFLAGS    := -std=c++1z
 LDFLAGS   := -I $(INCDIR) -lpthread
+
+N_TOADS   := 4
+N_FROGS   := 4
