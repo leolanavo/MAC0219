@@ -8,7 +8,20 @@ Os animais contêm o idenficador deles, para saber se é rã ou sapo, o índice 
 'animals', a sua thread e a pedra em que estão.
 
 Ao mesmo tempo que cria os animais, o programa popula o vetor global 'rocks', vetor que guarda em quais
-pedras tem rãs, quais têm sapo e qual é a vazio. Também inicializa a variável global 'free_rock', que
+pedras tem rãs, quais têm sapo e qual é a vazia. Também inicializa a variável global 'free_rock', que
 marca qual o índice da pedra livre, utilizada para verficar se o animal pode pular.
 
-Após a inicialização dos animais e das variáveis globais. O programa copia o vetor de todo
+Após a inicialização dos animais e das variáveis globais. O programa copia o vetor de todos os animais
+e aleatoriza o vetor copiado, a fim de iniciar as threads de forma aleatória.
+
+Cada thread executa o método 'jump' da classe 'Amphibian'. O método recebe um 'void *' que é o índice 
+do animal no vetor 'animals'. A partir deste índice, a função seleciona o objeto que será utilizado
+durante sua execução.
+
+O método 'jump' possui um laço que executará até o animal não poder mais se movimentar, ou seja,
+quando só houver rãs na frente de uma rã e só sapos antes do sapo. A primeira instrução do laço,
+é uma 'pthread_mutex_lock', assim só uma thread entra na seção crítica por vez.
+
+A seção crítica consiste em a thread verificar se o animal pode ou pular. Se pode pular, o animal
+modifica as variáveis necessárias para registrar o 'pulo', modifica a pedra que o animal está,
+a pedra livre e o vetor de pedras.
