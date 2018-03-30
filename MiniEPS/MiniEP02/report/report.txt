@@ -1,4 +1,9 @@
-O programa recebe dois argumentos da linha de comando: o número de rãs e o de sapos.
+O programa recebe três argumentos da linha de comando: o número de rãs , número de sapos e qual
+dos dois indicadores de deadlock deve usar.
+
+Indicadoress de deadlock:
+0 --> Árbrito
+1 --> Contador global
 
 Cria os animais usando a notação:
 -1 --> rã
@@ -26,9 +31,14 @@ A seção crítica consiste em a thread verificar se o animal pode ou pular. Se 
 modifica as variáveis necessárias para registrar o 'pulo', modifica a pedra que o animal está,
 a pedra livre e o vetor de pedras.
 
-Toda vez que um animal não consegue pular, o contador do deadlock é incrementado, se o animal consegue
-pular o contador é zerado. Se o contador atigir 10000, o programa declara que houve um deadlock
-e executa um 'exit(1)
+No contador global, toda vez que um animal não consegue pular, o contador do deadlock é incrementado,
+se o animal consegue pular o contador é zerado. Se o contador atigir 10000, o programa declara que
+houve um deadlock e executa um 'exit(0)', terminando o programa.
+
+No árbitro, a função verifica se os dois próximos animais e os dois antes da pedra livre. Se o dois
+animais depois da pedra livre são rãs, os dois antes são sapos e o programa ainda não sinalizou que
+houve sucesso, então estamos numa situação em que não há mais movimentos possíveis a serem feitos e
+o sucesso não foi obtido, logo estamos em deadlock.
 
 Os teste fixo é feito com 4 rãs e 4 sapos. Para mudar o número de sapos e rãs mude o valor das
 variáveis 'N_FROGS' e 'N_TOADS' no arquivo Config.mk.

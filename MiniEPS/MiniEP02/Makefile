@@ -51,7 +51,10 @@ debug: $(addprefix $(TSTDIR)/,$(BIN))
 
 .PHONY: run
 run:
-	$(BINDIR)/$(BIN) $(N_TOADS) $(N_FROGS)
+	@echo "-------- Contador Global --------"
+	@$(BINDIR)/$(BIN) $(N_TOADS) $(N_FROGS) 1
+	@echo "----------- Árbrito -------------"
+	@$(BINDIR)/$(BIN) $(N_TOADS) $(N_FROGS) 0
 
 # Compile each one of the binaries
 define bin-factory
