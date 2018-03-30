@@ -5,12 +5,12 @@ using namespace std;
 
 class Amphibian {
     public:
-        bool animal_id;
+        int animal_id;
         int rock;
         int index;
         pthread_t th;
 
-        Amphibian(bool animal_id, int rock, int index);
+        Amphibian(int animal_id, int rock, int index);
 
         void execute_thread(int i);
 

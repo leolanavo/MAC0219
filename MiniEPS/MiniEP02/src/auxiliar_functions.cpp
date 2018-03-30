@@ -11,9 +11,9 @@ void print_vector(vector<int> &v) {
     cout << "[";
     for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) {
         if (distance(v.begin(), it) < v.size() - 1)
-            cout << *it << ", ";
+            cerr << *it << ", ";
         else
-            cout << *it;
+            cerr << *it;
     }
-    cout << "]" << endl;
+    cerr << "]" << endl;
 }
