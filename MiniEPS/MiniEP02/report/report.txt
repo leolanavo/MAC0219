@@ -1,0 +1,14 @@
+O programa recebe dois argumentos da linha de comando: o número de rãs e o de sapos.
+
+Cria os animais usando a notação:
+-1 --> rã
+ 1 --> sapo
+
+Os animais contêm o idenficador deles, para saber se é rã ou sapo, o índice do animal no vetor global
+'animals', a sua thread e a pedra em que estão.
+
+Ao mesmo tempo que cria os animais, o programa popula o vetor global 'rocks', vetor que guarda em quais
+pedras tem rãs, quais têm sapo e qual é a vazio. Também inicializa a variável global 'free_rock', que
+marca qual o índice da pedra livre, utilizada para verficar se o animal pode pular.
+
+Após a inicialização dos animais e das variáveis globais. O programa copia o vetor de todo
