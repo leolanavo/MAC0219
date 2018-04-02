@@ -14,5 +14,5 @@ BIN       := a.out
 TARF      := leonardo.lana.bruno.scholl
 FINALDIR  := leonardo.lana.bruno.scholl
 
-CFLAGS    := -std=c++1z
+CFLAGS    := -std=c++1z -O0
 LDFLAGS   := -I $(INCDIR) -lpthread
