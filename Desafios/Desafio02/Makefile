@@ -51,6 +51,8 @@ debug: $(addprefix $(TSTDIR)/,$(BIN))
 
 .PHONY: run
 run:
+	@$(ECHO) "Executing"
+	$(BINDIR)/$(BIN)
 
 # Compile each one of the binaries
 define bin-factory
