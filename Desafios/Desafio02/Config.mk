@@ -11,7 +11,8 @@
 ###################################################
 
 BIN       := a.out
-TARF      := leonardo.lana.bruno.scholl
+COMPF     := leonardo.lana.bruno.scholl
+COMPEXT   := zip
 FINALDIR  := leonardo.lana.bruno.scholl
 
 CFLAGS    := -std=c++1z -O0

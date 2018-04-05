@@ -12,7 +12,7 @@ RMDIR := rm -rf
 CP    := cp -r
 ECHO  := echo -e
 MKDIR := mkdir -p
-TAR   := tar -cvf
+COMP  := zip -r
 
 BINDIR := bin
 SRCDIR := src
@@ -106,7 +106,7 @@ package: clean | $(FINALDIR)
 	@$(CP) Config.mk $(FINALDIR)
 
 	@$(ECHO) "Compressing..."
-	@$(TAR) $(TARF).tar.gz $(FINALDIR)
+	@$(COMP) $(COMPF).$(COMPEXT) $(FINALDIR)
 
 	@$(ECHO) "Cleaning..."
 	@$(RMDIR) $(FINALDIR)
