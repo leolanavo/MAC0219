@@ -1,0 +1,42 @@
+A partir de um tamanho suficientemente grande, os testes com 0 'ifs' foram
+visivelmente piores que qualquer outro teste de 1 a 9 'ifs', portanto os testes
+com 0 'ifs' não serão considerados na avaliação da média.
+
+A diferença de 1 a 9 'ifs' entre o diferentes tamanhos de vetores é irrelevante,
+Com uma variação desprezivel entre o tamanho de vetor 10 e 100000. Somente
+ocorrendo diferença quando o tamanho do vetor torna-se grande o suficiente,
+no caso dos meus testes 1000000. E a variação entre o número de 'ifs' para o
+mesmo tamanho de vetor é irrelevante, sendo cosiderada como apenas ruído.
+
+O número de 'ifs' faz uma grande diferença quando alteramos o número de threads.
+Com o tempo aumentando conforme o número de threads. Mas em nenhum dos meus testes,
+além de 0 'ifs', o número de 'ifs' alterou consideravelmente tempo de execução.
+
+Abaixo estão estão dois exemplos, o primeiro com variação no tamanho do vetor,
+e a segunda na variação do número de threads.
+
+N_SIZE: 10          |      N_SIZE: 10000
+N_THREADS: 10       |      N_THREADS: 10
+MEAN: 3.85e-05      |      MEAN: 4.78e-05
+1 | 0.000038 s      |      1 | 0.000044 s
+2 | 0.000042 s      |      2 | 0.000048 s
+3 | 0.000038 s      |      3 | 0.000048 s
+4 | 0.000040 s      |      4 | 0.000045 s
+5 | 0.000034 s      |      5 | 0.000087 s
+6 | 0.000038 s      |      6 | 0.000042 s
+7 | 0.000036 s      |      7 | 0.000044 s
+8 | 0.000039 s      |      8 | 0.000046 s
+9 | 0.000080 s      |      9 | 0.000074 s
+-----------------------------------------
+N_SIZE: 1000000     |      N_SIZE: 100000
+N_THREADS: 100      |      N_THREADS: 10
+0 | 0.068711 s      |      0 | 0.064538 s
+1 | 0.001160 s      |      1 | 0.000908 s
+2 | 0.001092 s      |      2 | 0.000912 s
+3 | 0.001116 s      |      3 | 0.000910 s
+4 | 0.001147 s      |      4 | 0.000915 s
+5 | 0.001186 s      |      5 | 0.000901 s
+6 | 0.001173 s      |      6 | 0.000940 s
+7 | 0.001166 s      |      7 | 0.001016 s
+8 | 0.001132 s      |      8 | 0.000938 s
+9 | 0.001176 s      |      9 | 0.000981 s
