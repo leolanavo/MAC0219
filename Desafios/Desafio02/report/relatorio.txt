@@ -1,0 +1,35 @@
+O Hyperthreading surgiu para suprir a demanda por processamento a preços mais
+acessíveis ao trazer desempenho próximo ao de cpus com mais núcleos a cpus com
+menos núcleos, através da maior utilização do processador em momentos que de
+outra forma estaria ocioso à espera de um processo. 
+Isso é atingido ao tornar a mudança de contexto tão rápida e barata em termos
+de performance que é possível manter duas threads para serem executadas em
+apenas um núcleo físico trocando qual é executada no momento em que uma delas
+tem de fazer uma pausa para carregar algo da memória, disco ou periférico.
+Em tarefas comuns há muitos momentos em que os processos têm de aguardar dados
+para poder continuar o processamento, tornando o hyperthreading vantajoso e a
+execução das threads no mesmo núcleo aparentar ser paralela.
+Com isso em mente, para tentar evidenciar tipos de tarefas nas quais o
+hyperthreading não se torna vantajoso e, às vezes, até pior do que a execução 
+sem a estratégia do hyperthreading, escrevemos um código simples que requer 
+muito tempo de processamento sem a necessidade de carregar dados da memória.
+Executamos essa subrotina de duas maneiras diferentes: 
+A primeira com n threads, com n igual ao número de núcleos físicos, com o
+objetivo de cada thread ser executada por um núcleo real, de modo que o
+hyperthreading não seja utilizado e o tempo que cada thread leva para realizar
+seu trabalho seja o mais próximo de uma cpu sem hyperthreading implementado.
+A segunda com m threads, com m maior do que o número de núcleos físicos,
+preferencialmente o número de núcleos virtuais que são o dobro do número de
+núcleos físicos, de forma a ocupar cada núcleo físico com duas threads que não
+fazem intervalos para carregar dados, e assim, não deixam brechas para trocas de
+contexto "espontâneas"; e ainda, como todos os núcleos estão ocupados da mesma
+forma, não há como as threads serem escalonadas para outros processadores mais
+livres. Esse tipo de trabalho, juntamente com essa configuração de execução faz 
+com que as threads tenham de esperar bem mais para serem executadas, pois há
+outra executando no mesmo núcleo físico.
+Nos testes obtivemos resultados que afirmam esse ponto fraco do hyperthreading, 
+com os tempos entre execuções apenas com núcleos físicos e com hyperthreading 
+diferindo em até 100%, isto é, cada thread levou o dobro de tempo para executar 
+em modo hyperthreading.
+Assim, apesar do hyperthreading na maior parte das tarefas trazer benefícios, em 
+alguns poucos momentos pode ser ruim.
