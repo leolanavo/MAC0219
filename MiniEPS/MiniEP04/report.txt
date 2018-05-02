@@ -1,0 +1,111 @@
+Decidi por dividir a análise dos dados por variável, estudando como a variação
+desta afeta o tempo de execução, sendo assim a análise será dividida em
+presença/ausência do __sync_syncronize, aumento no número de acessos na seção
+critíca, aumento no número de threads e o escalonador usado.
+
+################################################################################
+#                   Presença/Ausência do __sync_syncronize                     #
+################################################################################
+
+O algoritmo gate escreve na memória com maior frequência do que o bakery,
+portanto o algoritmo gate é significativamente mais afetado pelo uso da função
+__sync_syncronize(), que cria uma barreira para que todas as escritas na memória
+que foram requisitadas anteriormente sejam efetuadas antes do proseguimento
+do programa.
+
+A tabela a seguir apresenta os valores da média do tempo decorrido dos 30 testes
+executados:
+
+       |    Sem    |    Com    |
+-------|-----------|-----------|
+Bakery | 161959.75 | 190847.50 |
+-------|-----------|-----------|
+Gate   |  99015.90 | 198070.60 |
+-------|-----------|-----------|
+
+################################################################################
+#                Aumento do número de acessos na seção crítica                 #
+################################################################################
+
+O aumento do número de acessos a seção crítica afeta linearmente o tempo de
+execução do programa, nada de interessante para analisar nesta parte.
+
+A variação do número de acessos praticamente não afeta o algoritmo bakery. Porém
+quanto mais acessos maior é o desvio padrão no número de acessos do algoritmo
+gate. Evidenciando a inconsistência da justiça no algoritmo gate.
+
+A tabela a seguir apresenta as médias dos desvios padrões do número de acessos
+dos 30 testes executados:
+
+
+       |  100.000  | 1.000.000  | 3.000.000 |
+-------|-----------|------------|-----------|
+Bakery |   77.5    |   506.7    |   569.7   |
+-------|-----------|------------|-----------|
+Gate   |   201.1   |   1296.5   |   3965.1  |
+-------|-----------|------------|-----------|
+
+
+################################################################################
+#                        Aumento do número de threads                          #
+################################################################################
+
+Nos meus testes, as execuções com 5 threads tiveram o menor tempo para ambos os
+algoritmos, equanto os testes com 2 e 10 threads tiveram sua performance
+prejudica pelo número de threads.
+
+No caso de duas 2 threads, foi mais demorado pelo número diminuto de threads. E
+no caso, de 10 threads o overhead de manusear as threads prejudicou o
+desempenho do programa.
+
+A tabela a seguir apresenta as médias do tempo decorrido dos 30 testes
+executados:
+
+       |     2     |     5     |     10    |
+-------|-----------|-----------|-----------|
+Bakery | 405745.16 | 161959.70 | 742610.90 |
+-------|-----------|-----------|-----------|
+Gate   | 157719.60 |  99015.90 | 117185.45 |
+-------|-----------|-----------|-----------|
+
+################################################################################
+#                            Mudança do escalonador                            #
+################################################################################
+Cada escalonador foi melhor para um dos dois algoritmos.
+
+Para o bakery, o fifo foi o melhor escalonador em questão de tempo, porém o
+Round Robin forneceu uma justiça maior. Para o algoritmo gate, ocorreu o oposto,
+o FIFO foi o mais justo, enquanto o Round Robin o mais rápido.
+
+A tabela a seguir apresenta as médias do tempo decorrido dos 30 testes
+executados:
+
+       |   OTHER   |    FIFO   |    RR     |
+-------|-----------|-----------|-----------|
+Bakery | 161959.75 |  9579.65  |  12625.15 |
+-------|-----------|-----------|-----------|
+Gate   |  99015.90 |  12955.25 |  10487.40 |
+-------|-----------|-----------|-----------|
+
+A tabela a seguir apresenta as médias dos desvios padrões do número de acessos
+dos 30 testes executados:
+
+       |   OTHER   |    FIFO   |    RR     |
+-------|-----------|-----------|-----------|
+Bakery |   77.50   |   47.90   |   40.75   |
+-------|-----------|-----------|-----------|
+Gate   |   201.15  |   172.55  |   228.45  |
+-------|-----------|-----------|-----------|
+
+################################################################################
+#                                  Testes                                      #
+################################################################################
+Os testes foram feitos usando os parâmetros:
+
+Nº de threads: 2, 5 (padrão) e 10
+Nº de acessos: 100.000 (padrão), 1.000.000, 3.000.000
+Escalonador: FIFO, Round Robin, Padrão (padrão)
+Sincronização: com e sem (padrão)
+
+Os valores assinalados como padrão são os valores adotados para os testes,
+onde aquela variável não varia.

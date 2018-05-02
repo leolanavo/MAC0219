@@ -1,54 +1,1080 @@
-{'sched': 'SCHED_OTHER', 'n_th': '2', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 405745.1666666667, 'std': 17.667169804156206}, 'average_time': {'avg': 500.5, 'std': 17.667169804156206}, 'standard_deviation': {'avg': 5.566666666666666, 'std': 17.667169804156206}}, 'gate': {'elapsed_time': {'avg': 157719.63333333333, 'std': 177.74596494873114}, 'average_time': {'avg': 535.6833333333333, 'std': 177.74596494873114}, 'standard_deviation': {'avg': 174.11666666666667, 'std': 177.74596494873114}}}
-{'sched': 'SCHED_OTHER', 'n_th': '2', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 3696565.0, 'std': 41.29849338118227}, 'average_time': {'avg': 5000.5, 'std': 41.29849338118227}, 'standard_deviation': {'avg': 24.133333333333333, 'std': 41.29849338118227}}, 'gate': {'elapsed_time': {'avg': 1264760.7333333334, 'std': 616.2023172898114}, 'average_time': {'avg': 5174.883333333333, 'std': 616.2023172898114}, 'standard_deviation': {'avg': 477.75, 'std': 616.2023172898114}}}
-{'sched': 'SCHED_OTHER', 'n_th': '2', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 12122007.9, 'std': 41.64939642086332}, 'average_time': {'avg': 15000.5, 'std': 41.64939642086332}, 'standard_deviation': {'avg': 30.666666666666668, 'std': 41.64939642086332}}, 'gate': {'elapsed_time': {'avg': 3888535.966666667, 'std': 1199.127733905868}, 'average_time': {'avg': 16159.4, 'std': 1199.127733905868}, 'standard_deviation': {'avg': 959.8333333333334, 'std': 1199.127733905868}}}
-{'sched': 'SCHED_OTHER', 'n_th': '5', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 161959.76666666666, 'std': 52.13043206950666}, 'average_time': {'avg': 200.64000000000007, 'std': 52.13043206950666}, 'standard_deviation': {'avg': 77.47959346666667, 'std': 52.13043206950666}}, 'gate': {'elapsed_time': {'avg': 99015.9, 'std': 38.7172587238426}, 'average_time': {'avg': 248.7866666666667, 'std': 38.7172587238426}, 'standard_deviation': {'avg': 201.1538727, 'std': 38.7172587238426}}}
-{'sched': 'SCHED_OTHER', 'n_th': '5', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 6313273.033333333, 'std': 441.17604915714486}, 'average_time': {'avg': 2000.7266666666671, 'std': 441.17604915714486}, 'standard_deviation': {'avg': 506.69767746666673, 'std': 441.17604915714486}}, 'gate': {'elapsed_time': {'avg': 1318465.1333333333, 'std': 372.4339266208143}, 'average_time': {'avg': 2399.6933333333336, 'std': 372.4339266208143}, 'standard_deviation': {'avg': 1296.4930099, 'std': 372.4339266208143}}}
-{'sched': 'SCHED_OTHER', 'n_th': '5', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 25756139.9, 'std': 556.7760129331956}, 'average_time': {'avg': 6000.799999999998, 'std': 556.7760129331956}, 'standard_deviation': {'avg': 569.6866549000001, 'std': 556.7760129331956}}, 'gate': {'elapsed_time': {'avg': 4171030.6, 'std': 1107.2535920347202}, 'average_time': {'avg': 7369.84, 'std': 1107.2535920347202}, 'standard_deviation': {'avg': 3965.1593285999998, 'std': 1107.2535920347202}}}
-{'sched': 'SCHED_OTHER', 'n_th': '10', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 742610.9333333333, 'std': 31.45646576752901}, 'average_time': {'avg': 100.39, 'std': 31.45646576752901}, 'standard_deviation': {'avg': 109.65690923333332, 'std': 31.45646576752901}}, 'gate': {'elapsed_time': {'avg': 117185.46666666666, 'std': 37.501047033295684}, 'average_time': {'avg': 112.91333333333333, 'std': 37.501047033295684}, 'standard_deviation': {'avg': 210.66489859999993, 'std': 37.501047033295684}}}
-{'sched': 'SCHED_OTHER', 'n_th': '10', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 12966669.533333333, 'std': 429.9725869335262}, 'average_time': {'avg': 1000.7133333333334, 'std': 429.9725869335262}, 'standard_deviation': {'avg': 819.4656761666666, 'std': 429.9725869335262}}, 'gate': {'elapsed_time': {'avg': 779187.7666666667, 'std': 362.02948211189664}, 'average_time': {'avg': 1112.7966666666666, 'std': 362.02948211189664}, 'standard_deviation': {'avg': 1872.3583623333332, 'std': 362.02948211189664}}}
-{'sched': 'SCHED_OTHER', 'n_th': '10', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 83661339.83333333, 'std': 648.8448467376697}, 'average_time': {'avg': 3000.9033333333327, 'std': 648.8448467376697}, 'standard_deviation': {'avg': 848.4991525666667, 'std': 648.8448467376697}}, 'gate': {'elapsed_time': {'avg': 1852851.2, 'std': 923.3042814823997}, 'average_time': {'avg': 3505.473333333333, 'std': 923.3042814823997}, 'standard_deviation': {'avg': 3922.9420746, 'std': 923.3042814823997}}}
-{'sched': 'SCHED_OTHER', 'n_th': '2', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 422317.43333333335, 'std': 89.20852755700483}, 'average_time': {'avg': 500.48333333333335, 'std': 89.20852755700483}, 'standard_deviation': {'avg': 19.716666666666665, 'std': 89.20852755700483}}, 'gate': {'elapsed_time': {'avg': 220809.83333333334, 'std': 153.3279971897573}, 'average_time': {'avg': 500.48333333333335, 'std': 153.3279971897573}, 'standard_deviation': {'avg': 269.51666666666665, 'std': 153.3279971897573}}}
-{'sched': 'SCHED_OTHER', 'n_th': '2', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 3702958.3666666667, 'std': 894.9828162534121}, 'average_time': {'avg': 5000.483333333334, 'std': 894.9828162534121}, 'standard_deviation': {'avg': 182.81666666666666, 'std': 894.9828162534121}}, 'gate': {'elapsed_time': {'avg': 2264680.2, 'std': 967.2757391538131}, 'average_time': {'avg': 5000.5, 'std': 967.2757391538131}, 'standard_deviation': {'avg': 1720.1666666666667, 'std': 967.2757391538131}}}
-{'sched': 'SCHED_OTHER', 'n_th': '2', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 11157854.433333334, 'std': 23.974268613568917}, 'average_time': {'avg': 15000.5, 'std': 23.974268613568917}, 'standard_deviation': {'avg': 10.866666666666667, 'std': 23.974268613568917}}, 'gate': {'elapsed_time': {'avg': 6393065.233333333, 'std': 1242.4682888866375}, 'average_time': {'avg': 15000.5, 'std': 1242.4682888866375}, 'standard_deviation': {'avg': 2166.633333333333, 'std': 1242.4682888866375}}}
-{'sched': 'SCHED_OTHER', 'n_th': '5', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 190847.53333333333, 'std': 50.27693889141562}, 'average_time': {'avg': 200.64666666666673, 'std': 50.27693889141562}, 'standard_deviation': {'avg': 75.05619293333332, 'std': 50.27693889141562}}, 'gate': {'elapsed_time': {'avg': 198070.63333333333, 'std': 70.26207390060253}, 'average_time': {'avg': 200.65333333333336, 'std': 70.26207390060253}, 'standard_deviation': {'avg': 198.03497576666666, 'std': 70.26207390060253}}}
-{'sched': 'SCHED_OTHER', 'n_th': '5', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 6483184.566666666, 'std': 328.6217974933647}, 'average_time': {'avg': 2000.7400000000007, 'std': 328.6217974933647}, 'standard_deviation': {'avg': 661.6495887333333, 'std': 328.6217974933647}}, 'gate': {'elapsed_time': {'avg': 2547859.4, 'std': 351.8234700026537}, 'average_time': {'avg': 2000.686666666667, 'std': 351.8234700026537}, 'standard_deviation': {'avg': 1018.1916495666668, 'std': 351.8234700026537}}}
-{'sched': 'SCHED_OTHER', 'n_th': '5', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 25769782.7, 'std': 488.2596822001742}, 'average_time': {'avg': 6000.799999999998, 'std': 488.2596822001742}, 'standard_deviation': {'avg': 473.6703100666666, 'std': 488.2596822001742}}, 'gate': {'elapsed_time': {'avg': 6852507.233333333, 'std': 1560.324394897465}, 'average_time': {'avg': 6000.753333333331, 'std': 1560.324394897465}, 'standard_deviation': {'avg': 3136.885252400001, 'std': 1560.324394897465}}}
-{'sched': 'SCHED_OTHER', 'n_th': '10', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 48214.9, 'std': 28.747845738109255}, 'average_time': {'avg': 100.30666666666666, 'std': 28.747845738109255}, 'standard_deviation': {'avg': 125.59820616666666, 'std': 28.747845738109255}}, 'gate': {'elapsed_time': {'avg': 44932.03333333333, 'std': 40.84079615562796}, 'average_time': {'avg': 100.35333333333334, 'std': 40.84079615562796}, 'standard_deviation': {'avg': 170.0153524, 'std': 40.84079615562796}}}
-{'sched': 'SCHED_OTHER', 'n_th': '10', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 15369031.6, 'std': 407.44790444623175}, 'average_time': {'avg': 1000.7500000000001, 'std': 407.44790444623175}, 'standard_deviation': {'avg': 741.7575112666666, 'std': 407.44790444623175}}, 'gate': {'elapsed_time': {'avg': 619762.9666666667, 'std': 338.42433072358966}, 'average_time': {'avg': 1000.3566666666666, 'std': 338.42433072358966}, 'standard_deviation': {'avg': 1565.6042109666669, 'std': 338.42433072358966}}}
-{'sched': 'SCHED_OTHER', 'n_th': '10', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 75872700.5, 'std': 1625.6093180820744}, 'average_time': {'avg': 3000.8699999999994, 'std': 1625.6093180820744}, 'standard_deviation': {'avg': 1178.2647688, 'std': 1625.6093180820744}}, 'gate': {'elapsed_time': {'avg': 3519965.8666666667, 'std': 1337.4809014380044}, 'average_time': {'avg': 3000.6733333333323, 'std': 1337.4809014380044}, 'standard_deviation': {'avg': 3071.447541866667, 'std': 1337.4809014380044}}}
-{'sched': 'SCHED_FIFO', 'n_th': '2', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 492729.9666666667, 'std': 1.0624918300339485}, 'average_time': {'avg': 500.5, 'std': 1.0624918300339485}, 'standard_deviation': {'avg': 2.566666666666667, 'std': 1.0624918300339485}}, 'gate': {'elapsed_time': {'avg': 137006.96666666667, 'std': 162.1704084871494}, 'average_time': {'avg': 515.75, 'std': 162.1704084871494}, 'standard_deviation': {'avg': 175.48333333333332, 'std': 162.1704084871494}}}
-{'sched': 'SCHED_FIFO', 'n_th': '2', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 4404466.9, 'std': 3.858756276314948}, 'average_time': {'avg': 5000.5, 'std': 3.858756276314948}, 'standard_deviation': {'avg': 4.4, 'std': 3.858756276314948}}, 'gate': {'elapsed_time': {'avg': 1098893.0, 'std': 568.3546626007392}, 'average_time': {'avg': 5095.283333333334, 'std': 568.3546626007392}, 'standard_deviation': {'avg': 743.05, 'std': 568.3546626007392}}}
-{'sched': 'SCHED_FIFO', 'n_th': '2', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 7689284.033333333, 'std': 5160.4714851347535}, 'average_time': {'avg': 15000.433333333332, 'std': 5160.4714851347535}, 'standard_deviation': {'avg': 2238.9666666666667, 'std': 5160.4714851347535}}, 'gate': {'elapsed_time': {'avg': 2875283.966666667, 'std': 4145.118623955974}, 'average_time': {'avg': 15082.9, 'std': 4145.118623955974}, 'standard_deviation': {'avg': 3213.6, 'std': 4145.118623955974}}}
-{'sched': 'SCHED_FIFO', 'n_th': '5', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 9579.666666666666, 'std': 105.16862430014214}, 'average_time': {'avg': 200.69333333333336, 'std': 105.16862430014214}, 'standard_deviation': {'avg': 47.90708143333334, 'std': 105.16862430014214}}, 'gate': {'elapsed_time': {'avg': 12955.266666666666, 'std': 59.51923950341844}, 'average_time': {'avg': 242.6, 'std': 59.51923950341844}, 'standard_deviation': {'avg': 172.5714658, 'std': 59.51923950341844}}}
-{'sched': 'SCHED_FIFO', 'n_th': '5', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 38906.433333333334, 'std': 1113.4297489621438}, 'average_time': {'avg': 2000.7066666666672, 'std': 1113.4297489621438}, 'standard_deviation': {'avg': 462.2216662000001, 'std': 1113.4297489621438}}, 'gate': {'elapsed_time': {'avg': 9211.766666666666, 'std': 1006.4650109279186}, 'average_time': {'avg': 2443.8066666666664, 'std': 1006.4650109279186}, 'standard_deviation': {'avg': 1486.653908366667, 'std': 1006.4650109279186}}}
-{'sched': 'SCHED_FIFO', 'n_th': '5', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 72174.23333333334, 'std': 4185.272823112176}, 'average_time': {'avg': 6000.653333333332, 'std': 4185.272823112176}, 'standard_deviation': {'avg': 2134.439825666667, 'std': 4185.272823112176}}, 'gate': {'elapsed_time': {'avg': 126560.66666666667, 'std': 2788.904553481589}, 'average_time': {'avg': 7101.839999999998, 'std': 2788.904553481589}, 'standard_deviation': {'avg': 3765.534725, 'std': 2788.904553481589}}}
-{'sched': 'SCHED_FIFO', 'n_th': '10', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 26703.566666666666, 'std': 77.13506348716912}, 'average_time': {'avg': 100.75333333333336, 'std': 77.13506348716912}, 'standard_deviation': {'avg': 38.966215966666674, 'std': 77.13506348716912}}, 'gate': {'elapsed_time': {'avg': 50689.666666666664, 'std': 38.36766330069449}, 'average_time': {'avg': 122.08000000000001, 'std': 38.36766330069449}, 'standard_deviation': {'avg': 181.29808716666665, 'std': 38.36766330069449}}}
-{'sched': 'SCHED_FIFO', 'n_th': '10', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 34989.0, 'std': 1318.761809724088}, 'average_time': {'avg': 1000.6400000000002, 'std': 1318.761809724088}, 'standard_deviation': {'avg': 843.1526587000001, 'std': 1318.761809724088}}, 'gate': {'elapsed_time': {'avg': 34705.1, 'std': 244.60394188110192}, 'average_time': {'avg': 1254.3833333333334, 'std': 244.60394188110192}, 'standard_deviation': {'avg': 1312.3854405333332, 'std': 244.60394188110192}}}
-{'sched': 'SCHED_FIFO', 'n_th': '10', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 105225.8, 'std': 3087.969001861772}, 'average_time': {'avg': 3000.749999999999, 'std': 3087.969001861772}, 'standard_deviation': {'avg': 1450.5375288999999, 'std': 3087.969001861772}}, 'gate': {'elapsed_time': {'avg': 63456.1, 'std': 2044.8107584045767}, 'average_time': {'avg': 3651.6766666666667, 'std': 2044.8107584045767}, 'standard_deviation': {'avg': 4498.927589, 'std': 2044.8107584045767}}}
-{'sched': 'SCHED_FIFO', 'n_th': '2', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 489779.9, 'std': 3.5809682117177934}, 'average_time': {'avg': 500.5, 'std': 3.5809682117177934}, 'standard_deviation': {'avg': 2.6, 'std': 3.5809682117177934}}, 'gate': {'elapsed_time': {'avg': 92433.23333333334, 'std': 166.5452257563159}, 'average_time': {'avg': 500.5, 'std': 166.5452257563159}, 'standard_deviation': {'avg': 245.26666666666668, 'std': 166.5452257563159}}}
-{'sched': 'SCHED_FIFO', 'n_th': '2', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 3942756.066666667, 'std': 3.85515527861359}, 'average_time': {'avg': 5000.5, 'std': 3.85515527861359}, 'standard_deviation': {'avg': 3.566666666666667, 'std': 3.85515527861359}}, 'gate': {'elapsed_time': {'avg': 1580899.7666666666, 'std': 682.3206520560713}, 'average_time': {'avg': 5000.5, 'std': 682.3206520560713}, 'standard_deviation': {'avg': 904.3333333333334, 'std': 682.3206520560713}}}
-{'sched': 'SCHED_FIFO', 'n_th': '2', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 10204443.066666666, 'std': 5317.0675918843335}, 'average_time': {'avg': 15000.433333333332, 'std': 5317.0675918843335}, 'standard_deviation': {'avg': 2360.8, 'std': 5317.0675918843335}}, 'gate': {'elapsed_time': {'avg': 5359570.0, 'std': 2909.7056115410255}, 'average_time': {'avg': 15000.483333333334, 'std': 2909.7056115410255}, 'standard_deviation': {'avg': 2344.75, 'std': 2909.7056115410255}}}
-{'sched': 'SCHED_FIFO', 'n_th': '5', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 17566.2, 'std': 43.57655258862484}, 'average_time': {'avg': 200.78000000000006, 'std': 43.57655258862484}, 'standard_deviation': {'avg': 10.604593099999997, 'std': 43.57655258862484}}, 'gate': {'elapsed_time': {'avg': 10320.4, 'std': 85.47455469723427}, 'average_time': {'avg': 200.64000000000001, 'std': 85.47455469723427}, 'standard_deviation': {'avg': 242.1962877666667, 'std': 85.47455469723427}}}
-{'sched': 'SCHED_FIFO', 'n_th': '5', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 19717.3, 'std': 1448.3666754047706}, 'average_time': {'avg': 2000.6066666666668, 'std': 1448.3666754047706}, 'standard_deviation': {'avg': 965.6240000666664, 'std': 1448.3666754047706}}, 'gate': {'elapsed_time': {'avg': 218516.0, 'std': 749.7341354506719}, 'average_time': {'avg': 2000.726666666667, 'std': 749.7341354506719}, 'standard_deviation': {'avg': 1450.3929309666667, 'std': 749.7341354506719}}}
-{'sched': 'SCHED_FIFO', 'n_th': '5', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 15356.3, 'std': 5296.2253818169675}, 'average_time': {'avg': 6000.566666666666, 'std': 5296.2253818169675}, 'standard_deviation': {'avg': 3764.9327046333337, 'std': 5296.2253818169675}}, 'gate': {'elapsed_time': {'avg': 60599.166666666664, 'std': 2975.227807820099}, 'average_time': {'avg': 6000.606666666664, 'std': 2975.227807820099}, 'standard_deviation': {'avg': 4766.150438833333, 'std': 2975.227807820099}}}
-{'sched': 'SCHED_FIFO', 'n_th': '10', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 58649.03333333333, 'std': 130.84254348374995}, 'average_time': {'avg': 100.36999999999999, 'std': 130.84254348374995}, 'standard_deviation': {'avg': 160.4323549, 'std': 130.84254348374995}}, 'gate': {'elapsed_time': {'avg': 41916.13333333333, 'std': 84.84770287366126}, 'average_time': {'avg': 100.40000000000002, 'std': 84.84770287366126}, 'standard_deviation': {'avg': 220.08010656666667, 'std': 84.84770287366126}}}
-{'sched': 'SCHED_FIFO', 'n_th': '10', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 41037.26666666667, 'std': 779.8537840044254}, 'average_time': {'avg': 1000.7900000000003, 'std': 779.8537840044254}, 'standard_deviation': {'avg': 303.2053359333334, 'std': 779.8537840044254}}, 'gate': {'elapsed_time': {'avg': 47572.4, 'std': 540.33982473361}, 'average_time': {'avg': 1000.8400000000001, 'std': 540.33982473361}, 'standard_deviation': {'avg': 1068.8260248, 'std': 540.33982473361}}}
-{'sched': 'SCHED_FIFO', 'n_th': '10', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 136712.5, 'std': 2727.200104450571}, 'average_time': {'avg': 3000.7733333333326, 'std': 2727.200104450571}, 'standard_deviation': {'avg': 1155.8572446, 'std': 2727.200104450571}}, 'gate': {'elapsed_time': {'avg': 49268.2, 'std': 2007.836607623863}, 'average_time': {'avg': 3000.63, 'std': 2007.836607623863}, 'standard_deviation': {'avg': 3911.1328258666667, 'std': 2007.836607623863}}}
-{'sched': 'SCHED_RR', 'n_th': '2', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 596819.7666666667, 'std': 1.430229196861662}, 'average_time': {'avg': 500.5, 'std': 1.430229196861662}, 'standard_deviation': {'avg': 2.933333333333333, 'std': 1.430229196861662}}, 'gate': {'elapsed_time': {'avg': 157987.2, 'std': 145.25394333908994}, 'average_time': {'avg': 501.1166666666667, 'std': 145.25394333908994}, 'standard_deviation': {'avg': 172.51666666666668, 'std': 145.25394333908994}}}
-{'sched': 'SCHED_RR', 'n_th': '2', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 3330668.2666666666, 'std': 1246.140765189337}, 'average_time': {'avg': 5000.466666666666, 'std': 1246.140765189337}, 'standard_deviation': {'avg': 337.4, 'std': 1246.140765189337}}, 'gate': {'elapsed_time': {'avg': 956403.4666666667, 'std': 913.5444769626102}, 'average_time': {'avg': 5073.483333333334, 'std': 913.5444769626102}, 'standard_deviation': {'avg': 797.7833333333333, 'std': 913.5444769626102}}}
-{'sched': 'SCHED_RR', 'n_th': '2', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 11958769.2, 'std': 2691.0372546349727}, 'average_time': {'avg': 15000.483333333334, 'std': 2691.0372546349727}, 'standard_deviation': {'avg': 508.45, 'std': 2691.0372546349727}}, 'gate': {'elapsed_time': {'avg': 3068223.1, 'std': 3134.4592917102764}, 'average_time': {'avg': 15275.783333333333, 'std': 3134.4592917102764}, 'standard_deviation': {'avg': 2168.4166666666665, 'std': 3134.4592917102764}}}
-{'sched': 'SCHED_RR', 'n_th': '5', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 12625.166666666666, 'std': 98.5034286278916}, 'average_time': {'avg': 200.71333333333334, 'std': 98.5034286278916}, 'standard_deviation': {'avg': 40.760633033333335, 'std': 98.5034286278916}}, 'gate': {'elapsed_time': {'avg': 10487.4, 'std': 79.1785003455005}, 'average_time': {'avg': 235.62666666666664, 'std': 79.1785003455005}, 'standard_deviation': {'avg': 228.4719554333333, 'std': 79.1785003455005}}}
-{'sched': 'SCHED_RR', 'n_th': '5', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 18026.0, 'std': 1365.8629556387684}, 'average_time': {'avg': 2000.6533333333339, 'std': 1365.8629556387684}, 'standard_deviation': {'avg': 733.1174110999998, 'std': 1365.8629556387684}}, 'gate': {'elapsed_time': {'avg': 110700.46666666666, 'std': 1190.3168342029999}, 'average_time': {'avg': 2300.7933333333335, 'std': 1190.3168342029999}, 'standard_deviation': {'avg': 2085.236219266667, 'std': 1190.3168342029999}}}
-{'sched': 'SCHED_RR', 'n_th': '5', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 34245.46666666667, 'std': 2038.6242591635155}, 'average_time': {'avg': 6000.753333333331, 'std': 2038.6242591635155}, 'standard_deviation': {'avg': 771.2759244333332, 'std': 2038.6242591635155}}, 'gate': {'elapsed_time': {'avg': 81554.56666666667, 'std': 2004.4885409883714}, 'average_time': {'avg': 7160.173333333333, 'std': 2004.4885409883714}, 'standard_deviation': {'avg': 4437.5586570666665, 'std': 2004.4885409883714}}}
-{'sched': 'SCHED_RR', 'n_th': '10', 'n_ac': '100000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 110747.16666666667, 'std': 33.57243183008989}, 'average_time': {'avg': 100.84000000000002, 'std': 33.57243183008989}, 'standard_deviation': {'avg': 16.343107166666666, 'std': 33.57243183008989}}, 'gate': {'elapsed_time': {'avg': 71182.3, 'std': 49.96721592578289}, 'average_time': {'avg': 116.56000000000002, 'std': 49.96721592578289}, 'standard_deviation': {'avg': 200.35017680000004, 'std': 49.96721592578289}}}
-{'sched': 'SCHED_RR', 'n_th': '10', 'n_ac': '1000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 66703.63333333333, 'std': 842.9355828581453}, 'average_time': {'avg': 1000.7766666666668, 'std': 842.9355828581453}, 'standard_deviation': {'avg': 350.55266659999995, 'std': 842.9355828581453}}, 'gate': {'elapsed_time': {'avg': 48178.333333333336, 'std': 543.2828927290858}, 'average_time': {'avg': 1174.3300000000004, 'std': 543.2828927290858}, 'standard_deviation': {'avg': 1398.9911441333331, 'std': 543.2828927290858}}}
-{'sched': 'SCHED_RR', 'n_th': '10', 'n_ac': '3000000', 'sync': 'NO', 'bakery': {'elapsed_time': {'avg': 2366243.8, 'std': 1728.5668737605847}, 'average_time': {'avg': 3000.823333333333, 'std': 1728.5668737605847}, 'standard_deviation': {'avg': 601.3710626333334, 'std': 1728.5668737605847}}, 'gate': {'elapsed_time': {'avg': 68414.93333333333, 'std': 1474.69410718158}, 'average_time': {'avg': 3564.3199999999997, 'std': 1474.69410718158}, 'standard_deviation': {'avg': 4042.3203515666664, 'std': 1474.69410718158}}}
-{'sched': 'SCHED_RR', 'n_th': '2', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 500831.36666666664, 'std': 0.8919392106839769}, 'average_time': {'avg': 500.5, 'std': 0.8919392106839769}, 'standard_deviation': {'avg': 2.2333333333333334, 'std': 0.8919392106839769}}, 'gate': {'elapsed_time': {'avg': 249924.4, 'std': 168.6436874992163}, 'average_time': {'avg': 500.5, 'std': 168.6436874992163}, 'standard_deviation': {'avg': 280.7, 'std': 168.6436874992163}}}
-{'sched': 'SCHED_RR', 'n_th': '2', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 4526574.633333334, 'std': 1.9913702708325127}, 'average_time': {'avg': 5000.5, 'std': 1.9913702708325127}, 'standard_deviation': {'avg': 2.8666666666666667, 'std': 1.9913702708325127}}, 'gate': {'elapsed_time': {'avg': 971297.9, 'std': 1806.5129923111235}, 'average_time': {'avg': 5000.383333333333, 'std': 1806.5129923111235}, 'standard_deviation': {'avg': 2129.1833333333334, 'std': 1806.5129923111235}}}
-{'sched': 'SCHED_RR', 'n_th': '2', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 10338514.966666667, 'std': 2692.06761208844}, 'average_time': {'avg': 15000.483333333334, 'std': 2692.06761208844}, 'standard_deviation': {'avg': 502.78333333333336, 'std': 2692.06761208844}}, 'gate': {'elapsed_time': {'avg': 4940978.233333333, 'std': 1692.9324003699091}, 'average_time': {'avg': 15000.5, 'std': 1692.9324003699091}, 'standard_deviation': {'avg': 1879.7333333333333, 'std': 1692.9324003699091}}}
-{'sched': 'SCHED_RR', 'n_th': '5', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 118397.8, 'std': 46.558274244707675}, 'average_time': {'avg': 200.7733333333334, 'std': 46.558274244707675}, 'standard_deviation': {'avg': 13.34852403333333, 'std': 46.558274244707675}}, 'gate': {'elapsed_time': {'avg': 17949.8, 'std': 75.27438971578869}, 'average_time': {'avg': 200.7933333333334, 'std': 75.27438971578869}, 'standard_deviation': {'avg': 173.69232060000004, 'std': 75.27438971578869}}}
-{'sched': 'SCHED_RR', 'n_th': '5', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 448474.0, 'std': 1324.9873767720055}, 'average_time': {'avg': 2000.6533333333339, 'std': 1324.9873767720055}, 'standard_deviation': {'avg': 719.4298784999999, 'std': 1324.9873767720055}}, 'gate': {'elapsed_time': {'avg': 16528.9, 'std': 378.70000042600384}, 'average_time': {'avg': 2000.8000000000004, 'std': 378.70000042600384}, 'standard_deviation': {'avg': 1119.8745955000002, 'std': 378.70000042600384}}}
-{'sched': 'SCHED_RR', 'n_th': '5', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 14146.766666666666, 'std': 4182.9260854506565}, 'average_time': {'avg': 6000.653333333333, 'std': 4182.9260854506565}, 'standard_deviation': {'avg': 2209.6371293666666, 'std': 4182.9260854506565}}, 'gate': {'elapsed_time': {'avg': 26671.066666666666, 'std': 2826.1764349386253}, 'average_time': {'avg': 6000.659999999999, 'std': 2826.1764349386253}, 'standard_deviation': {'avg': 4580.8012398, 'std': 2826.1764349386253}}}
-{'sched': 'SCHED_RR', 'n_th': '10', 'n_ac': '100000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 32411.566666666666, 'std': 31.8130238139451}, 'average_time': {'avg': 100.86000000000004, 'std': 31.8130238139451}, 'standard_deviation': {'avg': 10.498358033333338, 'std': 31.8130238139451}}, 'gate': {'elapsed_time': {'avg': 42661.23333333333, 'std': 57.8271206714834}, 'average_time': {'avg': 100.66666666666669, 'std': 57.8271206714834}, 'standard_deviation': {'avg': 147.90823323333336, 'std': 57.8271206714834}}}
-{'sched': 'SCHED_RR', 'n_th': '10', 'n_ac': '1000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 61624.46666666667, 'std': 1422.4537544322081}, 'average_time': {'avg': 1000.5266666666668, 'std': 1422.4537544322081}, 'standard_deviation': {'avg': 1201.3949774333335, 'std': 1422.4537544322081}}, 'gate': {'elapsed_time': {'avg': 40683.666666666664, 'std': 632.2768898337787}, 'average_time': {'avg': 1000.7233333333336, 'std': 632.2768898337787}, 'standard_deviation': {'avg': 1146.9272146, 'std': 632.2768898337787}}}
-{'sched': 'SCHED_RR', 'n_th': '10', 'n_ac': '3000000', 'sync': 'YES', 'bakery': {'elapsed_time': {'avg': 2189579.033333333, 'std': 2753.282286301635}, 'average_time': {'avg': 3000.743333333332, 'std': 2753.282286301635}, 'standard_deviation': {'avg': 1358.0949979333332, 'std': 2753.282286301635}}, 'gate': {'elapsed_time': {'avg': 49638.36666666667, 'std': 2300.0280032888268}, 'average_time': {'avg': 3000.643333333333, 'std': 2300.0280032888268}, 'standard_deviation': {'avg': 3733.9825961, 'std': 2300.0280032888268}}}
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 405745.1666666667, standard deviation: 79308.76032868137
+	average accesses:
+		average: 500.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 5.566666666666666, standard deviation: 17.667169804156206
+GATE:
+	elapsed time:
+		average: 157719.63333333333, standard deviation: 53121.85731409331
+	average accesses:
+		average: 535.6833333333333, standard deviation: 39.696029048536104
+	standard deviation of accesses:
+		average: 174.11666666666667, standard deviation: 177.74596494873114
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 3696565.0, standard deviation: 523531.5405916502
+	average accesses:
+		average: 5000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 24.133333333333333, standard deviation: 41.29849338118227
+GATE:
+	elapsed time:
+		average: 1264760.7333333334, standard deviation: 214662.68199820438
+	average accesses:
+		average: 5174.883333333333, standard deviation: 161.08479564778574
+	standard deviation of accesses:
+		average: 477.75, standard deviation: 616.2023172898114
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 12122007.9, standard deviation: 1478416.949976254
+	average accesses:
+		average: 15000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 30.666666666666668, standard deviation: 41.64939642086332
+GATE:
+	elapsed time:
+		average: 3888535.966666667, standard deviation: 350910.75968489796
+	average accesses:
+		average: 16159.4, standard deviation: 952.9547505871759
+	standard deviation of accesses:
+		average: 959.8333333333334, standard deviation: 1199.127733905868
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 161959.76666666666, standard deviation: 294874.8203565578
+	average accesses:
+		average: 200.64000000000007, standard deviation: 0.12000000000000456
+	standard deviation of accesses:
+		average: 77.47959346666667, standard deviation: 52.13043206950666
+GATE:
+	elapsed time:
+		average: 99015.9, standard deviation: 72421.9073155584
+	average accesses:
+		average: 248.7866666666667, standard deviation: 23.776903826098877
+	standard deviation of accesses:
+		average: 201.1538727, standard deviation: 38.7172587238426
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 6313273.033333333, standard deviation: 2919511.6467972915
+	average accesses:
+		average: 2000.7266666666671, standard deviation: 0.09637888196536168
+	standard deviation of accesses:
+		average: 506.69767746666673, standard deviation: 441.17604915714486
+GATE:
+	elapsed time:
+		average: 1318465.1333333333, standard deviation: 47871.98363046548
+	average accesses:
+		average: 2399.6933333333336, standard deviation: 86.22778722018147
+	standard deviation of accesses:
+		average: 1296.4930099, standard deviation: 372.4339266208143
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 25756139.9, standard deviation: 8056446.22699636
+	average accesses:
+		average: 6000.799999999998, standard deviation: 1.8189894035458565e-12
+	standard deviation of accesses:
+		average: 569.6866549000001, standard deviation: 556.7760129331956
+GATE:
+	elapsed time:
+		average: 4171030.6, standard deviation: 1136233.200578373
+	average accesses:
+		average: 7369.84, standard deviation: 314.05117799492496
+	standard deviation of accesses:
+		average: 3965.1593285999998, standard deviation: 1107.2535920347202
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 742610.9333333333, standard deviation: 2682899.475245826
+	average accesses:
+		average: 100.39, standard deviation: 0.17578395831246985
+	standard deviation of accesses:
+		average: 109.65690923333332, standard deviation: 31.45646576752901
+GATE:
+	elapsed time:
+		average: 117185.46666666666, standard deviation: 135328.48181880347
+	average accesses:
+		average: 112.91333333333333, standard deviation: 9.735047794210132
+	standard deviation of accesses:
+		average: 210.66489859999993, standard deviation: 37.501047033295684
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 12966669.533333333, standard deviation: 11228288.016826931
+	average accesses:
+		average: 1000.7133333333334, standard deviation: 0.24046251729160847
+	standard deviation of accesses:
+		average: 819.4656761666666, standard deviation: 429.9725869335262
+GATE:
+	elapsed time:
+		average: 779187.7666666667, standard deviation: 1025820.4551943672
+	average accesses:
+		average: 1112.7966666666666, standard deviation: 55.31255724416373
+	standard deviation of accesses:
+		average: 1872.3583623333332, standard deviation: 362.02948211189664
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 83661339.83333333, standard deviation: 43828421.46679771
+	average accesses:
+		average: 3000.9033333333327, standard deviation: 0.01795054935709869
+	standard deviation of accesses:
+		average: 848.4991525666667, standard deviation: 648.8448467376697
+GATE:
+	elapsed time:
+		average: 1852851.2, standard deviation: 2035636.203749193
+	average accesses:
+		average: 3505.473333333333, standard deviation: 132.1884990794921
+	standard deviation of accesses:
+		average: 3922.9420746, standard deviation: 923.3042814823997
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 422317.43333333335, standard deviation: 128380.35394578702
+	average accesses:
+		average: 500.48333333333335, standard deviation: 0.08975274678557506
+	standard deviation of accesses:
+		average: 19.716666666666665, standard deviation: 89.20852755700483
+GATE:
+	elapsed time:
+		average: 220809.83333333334, standard deviation: 23183.063312230523
+	average accesses:
+		average: 500.48333333333335, standard deviation: 0.08975274678557506
+	standard deviation of accesses:
+		average: 269.51666666666665, standard deviation: 153.3279971897573
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 3702958.3666666667, standard deviation: 413316.83343955263
+	average accesses:
+		average: 5000.483333333334, standard deviation: 0.08975274678557507
+	standard deviation of accesses:
+		average: 182.81666666666666, standard deviation: 894.9828162534121
+GATE:
+	elapsed time:
+		average: 2264680.2, standard deviation: 245003.01378029343
+	average accesses:
+		average: 5000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 1720.1666666666667, standard deviation: 967.2757391538131
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 11157854.433333334, standard deviation: 967737.918678905
+	average accesses:
+		average: 15000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 10.866666666666667, standard deviation: 23.974268613568917
+GATE:
+	elapsed time:
+		average: 6393065.233333333, standard deviation: 331747.3327953754
+	average accesses:
+		average: 15000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 2166.633333333333, standard deviation: 1242.4682888866375
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 190847.53333333333, standard deviation: 386396.9270608255
+	average accesses:
+		average: 200.64666666666673, standard deviation: 0.11175369742827342
+	standard deviation of accesses:
+		average: 75.05619293333332, standard deviation: 50.27693889141562
+GATE:
+	elapsed time:
+		average: 198070.63333333333, standard deviation: 156503.0649434665
+	average accesses:
+		average: 200.65333333333336, standard deviation: 0.12578641509409305
+	standard deviation of accesses:
+		average: 198.03497576666666, standard deviation: 70.26207390060253
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 6483184.566666666, standard deviation: 2508707.3515979056
+	average accesses:
+		average: 2000.7400000000007, standard deviation: 0.09165151389913764
+	standard deviation of accesses:
+		average: 661.6495887333333, standard deviation: 328.6217974933647
+GATE:
+	elapsed time:
+		average: 2547859.4, standard deviation: 572299.1754812979
+	average accesses:
+		average: 2000.686666666667, standard deviation: 0.11175369742827403
+	standard deviation of accesses:
+		average: 1018.1916495666668, standard deviation: 351.8234700026537
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 25769782.7, standard deviation: 3950892.22319674
+	average accesses:
+		average: 6000.799999999998, standard deviation: 1.8189894035458565e-12
+	standard deviation of accesses:
+		average: 473.6703100666666, standard deviation: 488.2596822001742
+GATE:
+	elapsed time:
+		average: 6852507.233333333, standard deviation: 1268556.0319061377
+	average accesses:
+		average: 6000.753333333331, standard deviation: 0.12310790208415358
+	standard deviation of accesses:
+		average: 3136.885252400001, standard deviation: 1560.324394897465
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 48214.9, standard deviation: 44507.79609413015
+	average accesses:
+		average: 100.30666666666666, standard deviation: 0.1339983416149438
+	standard deviation of accesses:
+		average: 125.59820616666666, standard deviation: 28.747845738109255
+GATE:
+	elapsed time:
+		average: 44932.03333333333, standard deviation: 36288.13799988764
+	average accesses:
+		average: 100.35333333333334, standard deviation: 0.15648926125740645
+	standard deviation of accesses:
+		average: 170.0153524, standard deviation: 40.84079615562796
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 15369031.6, standard deviation: 14561713.813969009
+	average accesses:
+		average: 1000.7500000000001, standard deviation: 0.2012461179749713
+	standard deviation of accesses:
+		average: 741.7575112666666, standard deviation: 407.44790444623175
+GATE:
+	elapsed time:
+		average: 619762.9666666667, standard deviation: 1807059.4112698212
+	average accesses:
+		average: 1000.3566666666666, standard deviation: 0.15205992970609086
+	standard deviation of accesses:
+		average: 1565.6042109666669, standard deviation: 338.42433072358966
+---------------------------------------------------
+SCHEDULER: SCHED_OTHER
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 75872700.5, standard deviation: 33783230.321847856
+	average accesses:
+		average: 3000.8699999999994, standard deviation: 0.16155494421405145
+	standard deviation of accesses:
+		average: 1178.2647688, standard deviation: 1625.6093180820744
+GATE:
+	elapsed time:
+		average: 3519965.8666666667, standard deviation: 4307012.717725622
+	average accesses:
+		average: 3000.6733333333323, standard deviation: 0.20483055327650732
+	standard deviation of accesses:
+		average: 3071.447541866667, standard deviation: 1337.4809014380044
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 492729.9666666667, standard deviation: 58525.5306930137
+	average accesses:
+		average: 500.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 2.566666666666667, standard deviation: 1.0624918300339485
+GATE:
+	elapsed time:
+		average: 137006.96666666667, standard deviation: 51187.503639386654
+	average accesses:
+		average: 515.75, standard deviation: 25.564542501936806
+	standard deviation of accesses:
+		average: 175.48333333333332, standard deviation: 162.1704084871494
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 4404466.9, standard deviation: 1201268.3375334407
+	average accesses:
+		average: 5000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 4.4, standard deviation: 3.858756276314948
+GATE:
+	elapsed time:
+		average: 1098893.0, standard deviation: 623614.8577288175
+	average accesses:
+		average: 5095.283333333334, standard deviation: 164.50038922615215
+	standard deviation of accesses:
+		average: 743.05, standard deviation: 568.3546626007392
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 7689284.033333333, standard deviation: 6679700.489127186
+	average accesses:
+		average: 15000.433333333332, standard deviation: 0.1699673171197595
+	standard deviation of accesses:
+		average: 2238.9666666666667, standard deviation: 5160.4714851347535
+GATE:
+	elapsed time:
+		average: 2875283.966666667, standard deviation: 1982947.910278877
+	average accesses:
+		average: 15082.9, standard deviation: 354.2028467794502
+	standard deviation of accesses:
+		average: 3213.6, standard deviation: 4145.118623955974
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 9579.666666666666, standard deviation: 5925.778791761374
+	average accesses:
+		average: 200.69333333333336, standard deviation: 0.24073960113691115
+	standard deviation of accesses:
+		average: 47.90708143333334, standard deviation: 105.16862430014214
+GATE:
+	elapsed time:
+		average: 12955.266666666666, standard deviation: 11844.712612057005
+	average accesses:
+		average: 242.6, standard deviation: 21.09919429741335
+	standard deviation of accesses:
+		average: 172.5714658, standard deviation: 59.51923950341844
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 38906.433333333334, standard deviation: 136723.30919992717
+	average accesses:
+		average: 2000.7066666666672, standard deviation: 0.22939534045444862
+	standard deviation of accesses:
+		average: 462.2216662000001, standard deviation: 1113.4297489621438
+GATE:
+	elapsed time:
+		average: 9211.766666666666, standard deviation: 4497.512880717767
+	average accesses:
+		average: 2443.8066666666664, standard deviation: 185.1352693452967
+	standard deviation of accesses:
+		average: 1486.653908366667, standard deviation: 1006.4650109279186
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 72174.23333333334, standard deviation: 236188.17904821615
+	average accesses:
+		average: 6000.653333333332, standard deviation: 0.2825282680056662
+	standard deviation of accesses:
+		average: 2134.439825666667, standard deviation: 4185.272823112176
+GATE:
+	elapsed time:
+		average: 126560.66666666667, standard deviation: 574441.5349985488
+	average accesses:
+		average: 7101.839999999998, standard deviation: 382.5811648961999
+	standard deviation of accesses:
+		average: 3765.534725, standard deviation: 2788.904553481589
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 26703.566666666666, standard deviation: 9478.890334785443
+	average accesses:
+		average: 100.75333333333336, standard deviation: 0.297470820230978
+	standard deviation of accesses:
+		average: 38.966215966666674, standard deviation: 77.13506348716912
+GATE:
+	elapsed time:
+		average: 50689.666666666664, standard deviation: 35061.14507859409
+	average accesses:
+		average: 122.08000000000001, standard deviation: 9.981963734656624
+	standard deviation of accesses:
+		average: 181.29808716666665, standard deviation: 38.36766330069449
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 34989.0, standard deviation: 9714.941646762476
+	average accesses:
+		average: 1000.6400000000002, standard deviation: 0.40049968789000673
+	standard deviation of accesses:
+		average: 843.1526587000001, standard deviation: 1318.761809724088
+GATE:
+	elapsed time:
+		average: 34705.1, standard deviation: 16432.73670522757
+	average accesses:
+		average: 1254.3833333333334, standard deviation: 40.59979542915075
+	standard deviation of accesses:
+		average: 1312.3854405333332, standard deviation: 244.60394188110192
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 105225.8, standard deviation: 192970.03644856368
+	average accesses:
+		average: 3000.749999999999, standard deviation: 0.3084909507046966
+	standard deviation of accesses:
+		average: 1450.5375288999999, standard deviation: 3087.969001861772
+GATE:
+	elapsed time:
+		average: 63456.1, standard deviation: 129275.28049021335
+	average accesses:
+		average: 3651.6766666666667, standard deviation: 323.76614470255464
+	standard deviation of accesses:
+		average: 4498.927589, standard deviation: 2044.8107584045767
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 489779.9, standard deviation: 127907.4649594646
+	average accesses:
+		average: 500.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 2.6, standard deviation: 3.5809682117177934
+GATE:
+	elapsed time:
+		average: 92433.23333333334, standard deviation: 148140.68024970577
+	average accesses:
+		average: 500.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 245.26666666666668, standard deviation: 166.5452257563159
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 3942756.066666667, standard deviation: 1239429.62076661
+	average accesses:
+		average: 5000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 3.566666666666667, standard deviation: 3.85515527861359
+GATE:
+	elapsed time:
+		average: 1580899.7666666666, standard deviation: 922367.8722727601
+	average accesses:
+		average: 5000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 904.3333333333334, standard deviation: 682.3206520560713
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 10204443.066666666, standard deviation: 5426054.361618026
+	average accesses:
+		average: 15000.433333333332, standard deviation: 0.1699673171197595
+	standard deviation of accesses:
+		average: 2360.8, standard deviation: 5317.0675918843335
+GATE:
+	elapsed time:
+		average: 5359570.0, standard deviation: 2083113.764706239
+	average accesses:
+		average: 15000.483333333334, standard deviation: 0.08975274678557506
+	standard deviation of accesses:
+		average: 2344.75, standard deviation: 2909.7056115410255
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 17566.2, standard deviation: 20285.35148393211
+	average accesses:
+		average: 200.78000000000006, standard deviation: 0.10770329614269415
+	standard deviation of accesses:
+		average: 10.604593099999997, standard deviation: 43.57655258862484
+GATE:
+	elapsed time:
+		average: 10320.4, standard deviation: 5296.813460940454
+	average accesses:
+		average: 200.64000000000001, standard deviation: 0.2984403904746642
+	standard deviation of accesses:
+		average: 242.1962877666667, standard deviation: 85.47455469723427
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 19717.3, standard deviation: 27616.239918026495
+	average accesses:
+		average: 2000.6066666666668, standard deviation: 0.2988124644135084
+	standard deviation of accesses:
+		average: 965.6240000666664, standard deviation: 1448.3666754047706
+GATE:
+	elapsed time:
+		average: 218516.0, standard deviation: 908243.058439131
+	average accesses:
+		average: 2000.726666666667, standard deviation: 0.2096558025802018
+	standard deviation of accesses:
+		average: 1450.3929309666667, standard deviation: 749.7341354506719
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 15356.3, standard deviation: 11885.443548447542
+	average accesses:
+		average: 6000.566666666666, standard deviation: 0.34673076330530345
+	standard deviation of accesses:
+		average: 3764.9327046333337, standard deviation: 5296.2253818169675
+GATE:
+	elapsed time:
+		average: 60599.166666666664, standard deviation: 205168.09216105103
+	average accesses:
+		average: 6000.606666666664, standard deviation: 0.2657484190401073
+	standard deviation of accesses:
+		average: 4766.150438833333, standard deviation: 2975.227807820099
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 58649.03333333333, standard deviation: 96570.08830222166
+	average accesses:
+		average: 100.36999999999999, standard deviation: 0.4100000000000029
+	standard deviation of accesses:
+		average: 160.4323549, standard deviation: 130.84254348374995
+GATE:
+	elapsed time:
+		average: 41916.13333333333, standard deviation: 26315.138742725427
+	average accesses:
+		average: 100.40000000000002, standard deviation: 0.4250490167812048
+	standard deviation of accesses:
+		average: 220.08010656666667, standard deviation: 84.84770287366126
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 41037.26666666667, standard deviation: 13021.48829418341
+	average accesses:
+		average: 1000.7900000000003, standard deviation: 0.28089143810374945
+	standard deviation of accesses:
+		average: 303.2053359333334, standard deviation: 779.8537840044254
+GATE:
+	elapsed time:
+		average: 47572.4, standard deviation: 46227.23679289805
+	average accesses:
+		average: 1000.8400000000001, standard deviation: 0.22449944320643084
+	standard deviation of accesses:
+		average: 1068.8260248, standard deviation: 540.33982473361
+---------------------------------------------------
+SCHEDULER: SCHED_FIFO
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 136712.5, standard deviation: 423183.88820808934
+	average accesses:
+		average: 3000.7733333333326, standard deviation: 0.2874408151641822
+	standard deviation of accesses:
+		average: 1155.8572446, standard deviation: 2727.200104450571
+GATE:
+	elapsed time:
+		average: 49268.2, standard deviation: 41422.30980876528
+	average accesses:
+		average: 3000.63, standard deviation: 0.34847285881881707
+	standard deviation of accesses:
+		average: 3911.1328258666667, standard deviation: 2007.836607623863
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 596819.7666666667, standard deviation: 320178.08422976977
+	average accesses:
+		average: 500.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 2.933333333333333, standard deviation: 1.430229196861662
+GATE:
+	elapsed time:
+		average: 157987.2, standard deviation: 78710.84421873942
+	average accesses:
+		average: 501.1166666666667, standard deviation: 0.5112620550059324
+	standard deviation of accesses:
+		average: 172.51666666666668, standard deviation: 145.25394333908994
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 3330668.2666666666, standard deviation: 2705289.3194434973
+	average accesses:
+		average: 5000.466666666666, standard deviation: 0.12472191289246473
+	standard deviation of accesses:
+		average: 337.4, standard deviation: 1246.140765189337
+GATE:
+	elapsed time:
+		average: 956403.4666666667, standard deviation: 714345.3646512885
+	average accesses:
+		average: 5073.483333333334, standard deviation: 152.2634495062934
+	standard deviation of accesses:
+		average: 797.7833333333333, standard deviation: 913.5444769626102
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 11958769.2, standard deviation: 5964515.0723607
+	average accesses:
+		average: 15000.483333333334, standard deviation: 0.08975274678557506
+	standard deviation of accesses:
+		average: 508.45, standard deviation: 2691.0372546349727
+GATE:
+	elapsed time:
+		average: 3068223.1, standard deviation: 2202519.0157711594
+	average accesses:
+		average: 15275.783333333333, standard deviation: 473.0175592817764
+	standard deviation of accesses:
+		average: 2168.4166666666665, standard deviation: 3134.4592917102764
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 12625.166666666666, standard deviation: 10132.071381125494
+	average accesses:
+		average: 200.71333333333334, standard deviation: 0.2232089205704492
+	standard deviation of accesses:
+		average: 40.760633033333335, standard deviation: 98.5034286278916
+GATE:
+	elapsed time:
+		average: 10487.4, standard deviation: 5737.32021417665
+	average accesses:
+		average: 235.62666666666664, standard deviation: 25.96827466138036
+	standard deviation of accesses:
+		average: 228.4719554333333, standard deviation: 79.1785003455005
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 18026.0, standard deviation: 30361.822325633442
+	average accesses:
+		average: 2000.6533333333339, standard deviation: 0.272926526539425
+	standard deviation of accesses:
+		average: 733.1174110999998, standard deviation: 1365.8629556387684
+GATE:
+	elapsed time:
+		average: 110700.46666666666, standard deviation: 360056.44117237447
+	average accesses:
+		average: 2300.7933333333335, standard deviation: 239.4487028340076
+	standard deviation of accesses:
+		average: 2085.236219266667, standard deviation: 1190.3168342029999
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 34245.46666666667, standard deviation: 120568.91778971156
+	average accesses:
+		average: 6000.753333333331, standard deviation: 0.13349989596342304
+	standard deviation of accesses:
+		average: 771.2759244333332, standard deviation: 2038.6242591635155
+GATE:
+	elapsed time:
+		average: 81554.56666666667, standard deviation: 193805.70522281388
+	average accesses:
+		average: 7160.173333333333, standard deviation: 606.5055399215703
+	standard deviation of accesses:
+		average: 4437.5586570666665, standard deviation: 2004.4885409883714
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 100000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 110747.16666666667, standard deviation: 184448.52701482573
+	average accesses:
+		average: 100.84000000000002, standard deviation: 0.1704894913672615
+	standard deviation of accesses:
+		average: 16.343107166666666, standard deviation: 33.57243183008989
+GATE:
+	elapsed time:
+		average: 71182.3, standard deviation: 179459.60711780426
+	average accesses:
+		average: 116.56000000000002, standard deviation: 10.887166757242214
+	standard deviation of accesses:
+		average: 200.35017680000004, standard deviation: 49.96721592578289
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 1000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 66703.63333333333, standard deviation: 72931.595573973
+	average accesses:
+		average: 1000.7766666666668, standard deviation: 0.2906123802516901
+	standard deviation of accesses:
+		average: 350.55266659999995, standard deviation: 842.9355828581453
+GATE:
+	elapsed time:
+		average: 48178.333333333336, standard deviation: 38603.52167469814
+	average accesses:
+		average: 1174.3300000000004, standard deviation: 63.19027957948385
+	standard deviation of accesses:
+		average: 1398.9911441333331, standard deviation: 543.2828927290858
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 3000000
+SYNC: NO
+
+BAKERY:
+	elapsed time:
+		average: 2366243.8, standard deviation: 12398930.468068026
+	average accesses:
+		average: 3000.823333333333, standard deviation: 0.23048258550756298
+	standard deviation of accesses:
+		average: 601.3710626333334, standard deviation: 1728.5668737605847
+GATE:
+	elapsed time:
+		average: 68414.93333333333, standard deviation: 117478.10268781535
+	average accesses:
+		average: 3564.3199999999997, standard deviation: 206.51557552236426
+	standard deviation of accesses:
+		average: 4042.3203515666664, standard deviation: 1474.69410718158
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 500831.36666666664, standard deviation: 51681.46020156122
+	average accesses:
+		average: 500.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 2.2333333333333334, standard deviation: 0.8919392106839769
+GATE:
+	elapsed time:
+		average: 249924.4, standard deviation: 24348.13901663397
+	average accesses:
+		average: 500.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 280.7, standard deviation: 168.6436874992163
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 4526574.633333334, standard deviation: 1270925.1820837576
+	average accesses:
+		average: 5000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 2.8666666666666667, standard deviation: 1.9913702708325127
+GATE:
+	elapsed time:
+		average: 971297.9, standard deviation: 1113251.2773532714
+	average accesses:
+		average: 5000.383333333333, standard deviation: 0.21147629234082535
+	standard deviation of accesses:
+		average: 2129.1833333333334, standard deviation: 1806.5129923111235
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 2
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 10338514.966666667, standard deviation: 5397886.649960016
+	average accesses:
+		average: 15000.483333333334, standard deviation: 0.08975274678557506
+	standard deviation of accesses:
+		average: 502.78333333333336, standard deviation: 2692.06761208844
+GATE:
+	elapsed time:
+		average: 4940978.233333333, standard deviation: 2980572.913179642
+	average accesses:
+		average: 15000.5, standard deviation: 0.0
+	standard deviation of accesses:
+		average: 1879.7333333333333, standard deviation: 1692.9324003699091
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 118397.8, standard deviation: 571780.1171649465
+	average accesses:
+		average: 200.7733333333334, standard deviation: 0.11234866364235617
+	standard deviation of accesses:
+		average: 13.34852403333333, standard deviation: 46.558274244707675
+GATE:
+	elapsed time:
+		average: 17949.8, standard deviation: 23348.41328713081
+	average accesses:
+		average: 200.7933333333334, standard deviation: 0.03590109871423309
+	standard deviation of accesses:
+		average: 173.69232060000004, standard deviation: 75.27438971578869
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 448474.0, standard deviation: 1993815.08564223
+	average accesses:
+		average: 2000.6533333333339, standard deviation: 0.272926526539425
+	standard deviation of accesses:
+		average: 719.4298784999999, standard deviation: 1324.9873767720055
+GATE:
+	elapsed time:
+		average: 16528.9, standard deviation: 31472.168666246478
+	average accesses:
+		average: 2000.8000000000004, standard deviation: 4.547473508864641e-13
+	standard deviation of accesses:
+		average: 1119.8745955000002, standard deviation: 378.70000042600384
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 5
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 14146.766666666666, standard deviation: 14288.322704650194
+	average accesses:
+		average: 6000.653333333333, standard deviation: 0.28252826800563324
+	standard deviation of accesses:
+		average: 2209.6371293666666, standard deviation: 4182.9260854506565
+GATE:
+	elapsed time:
+		average: 26671.066666666666, standard deviation: 37780.32675342493
+	average accesses:
+		average: 6000.659999999999, standard deviation: 0.25377155080908925
+	standard deviation of accesses:
+		average: 4580.8012398, standard deviation: 2826.1764349386253
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 100000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 32411.566666666666, standard deviation: 15632.90271123341
+	average accesses:
+		average: 100.86000000000004, standard deviation: 0.15187714333192728
+	standard deviation of accesses:
+		average: 10.498358033333338, standard deviation: 31.8130238139451
+GATE:
+	elapsed time:
+		average: 42661.23333333333, standard deviation: 15595.006240638557
+	average accesses:
+		average: 100.66666666666669, standard deviation: 0.3379677828169781
+	standard deviation of accesses:
+		average: 147.90823323333336, standard deviation: 57.8271206714834
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 1000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 61624.46666666667, standard deviation: 112817.74011851544
+	average accesses:
+		average: 1000.5266666666668, standard deviation: 0.4327688631231212
+	standard deviation of accesses:
+		average: 1201.3949774333335, standard deviation: 1422.4537544322081
+GATE:
+	elapsed time:
+		average: 40683.666666666664, standard deviation: 25908.451275382882
+	average accesses:
+		average: 1000.7233333333336, standard deviation: 0.3252520390234038
+	standard deviation of accesses:
+		average: 1146.9272146, standard deviation: 632.2768898337787
+---------------------------------------------------
+SCHEDULER: SCHED_RR
+NUMBER OF THREADS: 10
+NUMBER OF ACCESS: 3000000
+SYNC: YES
+
+BAKERY:
+	elapsed time:
+		average: 2189579.033333333, standard deviation: 11418088.776809148
+	average accesses:
+		average: 3000.743333333332, standard deviation: 0.3040650515195353
+	standard deviation of accesses:
+		average: 1358.0949979333332, standard deviation: 2753.282286301635
+GATE:
+	elapsed time:
+		average: 49638.36666666667, standard deviation: 47895.93330439327
+	average accesses:
+		average: 3000.643333333333, standard deviation: 0.3729909143964041
+	standard deviation of accesses:
+		average: 3733.9825961, standard deviation: 2300.0280032888268
+---------------------------------------------------

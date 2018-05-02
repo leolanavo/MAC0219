@@ -54,15 +54,46 @@ for line in File:
                     std_time = float(std_time[0])
                     std_times = np.append(std_times, std_time)
 
-            times = {'elapsed_time': {'avg': np.mean(elp_times), 'std': np.std(std_times)},
-                     'average_time': {'avg': np.mean(avg_times), 'std': np.std(std_times)},
+            times = {'elapsed_time': {'avg': np.mean(elp_times), 'std': np.std(elp_times)},
+                     'average_time': {'avg': np.mean(avg_times), 'std': np.std(avg_times)},
                      'standard_deviation': {'avg': np.mean(std_times), 'std': np.std(std_times)}}
 
             Execution.update({algorithm: times})
-
 
         Executions.append(Execution)
         Execution = {'sched': None, 'n_th': None, 'n_ac': None, 'sync': None, 'bakery': None, 'gate': None}
 
 for test in Executions:
-    print(test)
+    print("SCHEDULER: " + test['sched'])
+    print("NUMBER OF THREADS: " + test['n_th'])
+    print("NUMBER OF ACCESS: " + test['n_ac'])
+    print("SYNC: " + test['sync'] + "\n")
+    print("BAKERY:")
+
+    print("\telapsed time:")
+    print("\t\taverage: " +  str(test['bakery']['elapsed_time']['avg']) + ", " +
+            "standard deviation: " + str(test['bakery']['elapsed_time']['std']))
+
+    print("\taverage accesses:")
+    print("\t\taverage: " +  str(test['bakery']['average_time']['avg']) + ", " +
+            "standard deviation: " + str(test['bakery']['average_time']['std']))
+
+    print("\tstandard deviation of accesses:")
+    print("\t\taverage: " +  str(test['bakery']['standard_deviation']['avg']) + ", " +
+            "standard deviation: " + str(test['bakery']['standard_deviation']['std']))
+
+    print("GATE:")
+
+    print("\telapsed time:")
+    print("\t\taverage: " +  str(test['gate']['elapsed_time']['avg']) + ", " +
+            "standard deviation: " + str(test['gate']['elapsed_time']['std']))
+
+    print("\taverage accesses:")
+    print("\t\taverage: " +  str(test['gate']['average_time']['avg']) + ", " +
+            "standard deviation: " + str(test['gate']['average_time']['std']))
+
+    print("\tstandard deviation of accesses:")
+    print("\t\taverage: " +  str(test['gate']['standard_deviation']['avg']) + ", " +
+            "standard deviation: " + str(test['gate']['standard_deviation']['std']))
+
+    print("---------------------------------------------------")
