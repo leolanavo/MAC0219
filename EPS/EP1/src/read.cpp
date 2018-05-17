@@ -4,9 +4,31 @@
 #include <vector>
 #include <iterator>
 #include <sstream>
+#include <pthread.h>
 
 
 using namespace std;
+
+// this is failing to compile
+//  "18: error: Matrix does not name a type"
+// this can be probably fixed with a modularization
+// of the project, so that the definition of the types
+// are ensured to happen before the uses
+
+typedef struct {
+    int x;
+    int y;
+    float ai;
+    float bj;
+    Matrix target;
+} *params;
+
+void *combineUnit(void *prm) {
+    params p = (params) prm;
+
+    p->target.data[p->x][p->y] = p->ai;
+    p->target.data[p->x][p->y + 1] = p->bj;
+}
 
 class Matrix {
     public:
@@ -64,13 +86,46 @@ class Matrix {
         Matrix CombineMatrixes(Matrix m2) {
             Matrix result = Matrix(this->lines * m2.lines, this->columns *  m2.columns);
 
+            int max;
+
+            vector<params> prms;
+            vector<pthread_t> tids;
+
             for (int i1 = 0; i1 < this->lines; i1++) {
                 for (int i2 = 0; i2 < m2.lines; i2++) {
                     for (int j = 0; j < this->columns; j++) {
-                        result.data[i1 * m2.lines + i2][j*2] = this->data[i1][j];
-                        result.data[i1 * m2.lines + i2][j*2 + 1] = m2.data[i2][j];
+                        pthread_t tid;
+                        params p = (params) malloc(sizeof(params));
+                        
+                        p->ai = this->data[i1][j];
+                        p->bj = m2.data[i2][j];
+                        p->x = i1 *m2.lines + i2;
+                        p->y = j*2;
+                        p->target = result;
+
+                        if (pthread_create(&tid, NULL, combineUnit, (void *) p)) {
+                            cout << "Failed to create thread. Exiting..." << endl;
+                            exit(1);
+                        }
+
+                        prms.push_back(p);
+                        tids.push_back(tid);
+
+                        // result.data[i1 * m2.lines + i2][j*2] = this->data[i1][j];
+                        // result.data[i1 * m2.lines + i2][j*2 + 1] = m2.data[i2][j];
                     }
                 }
+            }
+
+            max = this->lines * m2.lines * this->columns;
+
+            for (int t = 0; t < max; t++) {
+                pthread_join(tids[t], NULL);
+            }
+
+            for (int t = 0; t < max; t++) {
+                free(prms[t]);
+                prms[t] = NULL;
             }
 
             return result;
