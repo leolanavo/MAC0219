@@ -83,7 +83,7 @@ class Matrix {
 
         // The column of the super matrix is calculated with the j*2 and j*2 + 1
         // The line of the super matrix is calculated with the line = (i1 * m2.lines) + i2
-        Matrix CombineMatrixes(Matrix m2) {
+        Matrix CombineMatrices(Matrix m2) {
             Matrix result = Matrix(this->lines * m2.lines, this->columns *  m2.columns);
 
             int max;
@@ -167,7 +167,7 @@ int main(int argc, char* argv[]) {
 
     Matrix m1 = Matrix(ifstream(argv[1]), false);
     Matrix m2 = Matrix(ifstream(argv[2]), true);
-    Matrix m3 = m1.CombineMatrixes(m2);
+    Matrix m3 = m1.CombineMatrices(m2);
     Matrix m4 = m3.ReduceCombinedMatrix(m1.lines, m2.lines);
 
     cout << m1 << endl;
