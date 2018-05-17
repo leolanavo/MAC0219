@@ -35,5 +35,6 @@
 *.out
 *.app
 
+**/bin
 
 # End of https://www.gitignore.io/api/c++
