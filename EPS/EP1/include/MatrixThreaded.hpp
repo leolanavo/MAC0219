@@ -8,4 +8,8 @@ void* ThreadedReduceCombinedLine(void* line_arg);
 
 void ThreadedReduceCombinedMatrix(int b_cols);
 
+void* ThreadedCombineLines(void* bt_line_arg);
+
+void ThreadedCombineMatrices();
+
 #endif

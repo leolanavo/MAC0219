@@ -9,4 +9,7 @@ extern int m_cols;
 extern Matrix combinedMatrix;
 extern Matrix reducedMatrix;
 
+extern Matrix A;
+extern Matrix BT;
+
 #endif

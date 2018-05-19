@@ -19,6 +19,20 @@ int m_cols;
 Matrix combinedMatrix;
 Matrix reducedMatrix;
 
+Matrix A;
+Matrix BT;
+
+ostream& operator<<(ostream& os, Matrix& m) {
+    for (int i = 0; i < m.lines; i++) {
+        for (int j = 0; j < m.columns; j++) {
+            os << m.data[i][j] << " ";
+        }
+        os << endl;
+    }
+
+    return os;
+}
+
 // The column of the super matrix is calculated with the j*2 and j*2 + 1
 // The line of the super matrix is calculated with the line = (i1 * m2.lines) + i2
 Matrix CombineMatrices(Matrix& m1, Matrix& m2) {
@@ -34,7 +48,6 @@ Matrix CombineMatrices(Matrix& m1, Matrix& m2) {
     return result;
 }
 
-
 Matrix ReduceCombinedMatrix(Matrix& m, int lines, int columns) {
     Matrix result = Matrix(lines, columns);
 
@@ -49,33 +62,24 @@ Matrix ReduceCombinedMatrix(Matrix& m, int lines, int columns) {
     return result;
 }
 
-
-ostream& operator<<(ostream& os, Matrix& m) {
-    for (int i = 0; i < m.lines; i++) {
-        for (int j = 0; j < m.columns; j++) {
-            os << m.data[i][j] << " ";
-        }
-        os << endl;
-    }
-
-    return os;
-}
-
 int main(int argc, char* argv[]) {
     string line;
 
-    int proportion = atoi(argv[3]);
+    A = Matrix(ifstream(argv[1]), false);
+    BT = Matrix(ifstream(argv[2]), true);
 
-    Matrix a = Matrix(ifstream(argv[1]), false);
-    Matrix bT = Matrix(ifstream(argv[2]), true);
+    cout << A << endl;
+    cout << BT << endl;
 
-    combinedMatrix = CombineMatrices(a, bT);
-    reducedMatrix = Matrix(a.lines, bT.lines);
+    ThreadedCombineMatrices();
+    cout << combinedMatrix << endl;
 
-    b_cols = bT.lines;
+    reducedMatrix = Matrix(A.lines, BT.lines);
+
+    b_cols = BT.lines;
     m_cols = combinedMatrix.columns;
 
-    ThreadedReduceCombinedMatrix(bT.lines);
+    ThreadedReduceCombinedMatrix(BT.lines);
 
     cout << reducedMatrix;
 
