@@ -13,7 +13,7 @@ Matrix::Matrix(int x, int y):
 {
     data = (float**) malloc(sizeof(float*) * lines);
     for (int i = 0; i < lines; i++) {
-        data[i] = (float*) malloc(sizeof(float) * columns);
+        data[i] = (float*) calloc(sizeof(float), columns);
     }
 }
 
@@ -28,7 +28,7 @@ Matrix::Matrix(ifstream file, bool transpose) {
             iss >> columns >> lines;
         else
             iss >> lines >> columns;
-    }
+    } 
     else {
         cout << "File isn't open, ABORTING" << endl;
         exit(1);
@@ -36,7 +36,7 @@ Matrix::Matrix(ifstream file, bool transpose) {
 
     data = (float**) malloc(sizeof(float*) * lines);
     for (int i = 0; i < lines; i++) {
-        data[i] = (float*) malloc(sizeof(float) * columns);
+        data[i] = (float*) calloc(sizeof(float), columns);
     }
 
     int i, j;
