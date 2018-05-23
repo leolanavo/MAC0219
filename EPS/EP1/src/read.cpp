@@ -35,6 +35,15 @@ ostream& operator<<(ostream& os, Matrix& m) {
     return os;
 }
 
+ofstream& operator<<(ofstream& fs, Matrix& m) {
+    for (int i = 0; i < m.lines; i++)
+        for (int j = 0; j < m.columns; j++)
+            if (m.data[i][j] != 0)
+                fs << i << " " << j << " " << m.data[i][j] << endl;
+
+    return fs;
+}
+
 void CombineMatrices(Matrix& m1, Matrix& m2) {
     combinedMatrix = Matrix(m1.lines * m2.lines, m1.columns *  m2.columns);
 
@@ -61,6 +70,7 @@ void ReduceCombinedMatrix(Matrix& m, int lines, int columns) {
 
 int main(int argc, char* argv[]) {
     string line;
+    ofstream output_file;
 
     A = Matrix(ifstream(argv[ARG_INF1]), false);
     BT = Matrix(ifstream(argv[ARG_INF2]), true);
@@ -82,6 +92,10 @@ int main(int argc, char* argv[]) {
 
     cout << combinedMatrix << endl;
     cout << reducedMatrix;
+
+    output_file.open(argv[ARG_OUTF]);
+    output_file << reducedMatrix << endl;
+    output_file.close();
 
     return 0;
 }
