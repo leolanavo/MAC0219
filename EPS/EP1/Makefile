@@ -48,6 +48,16 @@ all: $(addprefix $(BINDIR)/,$(BIN))
 debug: CFLAGS += $(TESTFLAGS)
 debug: $(addprefix $(TSTDIR)/,$(BIN))
 
+.PHONY: runo
+runo: all
+runo: 
+	./bin/ep1 o txt/matrix1.txt txt/matrix2.txt
+
+.PHONY: runp
+runp: all
+runp: 
+	./bin/ep1 p txt/matrix1.txt txt/matrix2.txt
+
 # Compile each one of the binaries
 define bin-factory
 $$(BINDIR)/$1: $$($1.OBJ) | $$(BINDIR)
