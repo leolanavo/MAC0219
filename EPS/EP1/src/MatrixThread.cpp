@@ -1,8 +1,8 @@
-#include "MatrixThreaded.hpp"
+#include "MatrixThread.hpp"
 
 int line;
 
-void* ThreadedReduceCombinedLine(void* line_arg) {
+void* ThreadReduceLine(void* line_arg) {
     int line = *((int *) line_arg);
 
     float sum = 0.0;
@@ -15,7 +15,7 @@ void* ThreadedReduceCombinedLine(void* line_arg) {
     pthread_exit(NULL);
 }
 
-void ThreadedReduceCombinedMatrix(int b_cols) {
+void ThreadReduceMatrix() {
     int lines = combinedMatrix.lines;
 
     pthread_t* th_ids = (pthread_t*) malloc(sizeof(pthread_t) * lines);
@@ -23,7 +23,7 @@ void ThreadedReduceCombinedMatrix(int b_cols) {
     for (int i = 0; i < lines; i++) {
         int *line = new int(i);
 
-        if(pthread_create(&th_ids[i], NULL, ThreadedReduceCombinedLine, line)) {
+        if(pthread_create(&th_ids[i], NULL, ThreadReduceLine, line)) {
             cerr << "Failed creating thread " << i << endl;
             pthread_exit(NULL);
         }
@@ -36,10 +36,10 @@ void ThreadedReduceCombinedMatrix(int b_cols) {
     th_ids = NULL;
 }
 
-void* ThreadedCombineLines(void* bt_line_arg) {
+void* ThreadCombineLine(void* bt_line_arg) {
     int bt_line = *((int *) bt_line_arg);
     int i = (line * BT.lines) + bt_line;
-    int columns = combinedMatrix.columns;
+    int columns = BT.columns;
 
     for (int j = 0;  j < columns; j++) {
         combinedMatrix.data[i][j*2] = A.data[line][j];
@@ -49,16 +49,14 @@ void* ThreadedCombineLines(void* bt_line_arg) {
     pthread_exit(NULL);
 }
 
-void ThreadedCombineMatrices() {
-    combinedMatrix = Matrix(A.lines * BT.lines, A.columns * BT.columns);
-
+void ThreadCombineMatrices() {
     for(line = 0; line < A.lines; line++) {
         pthread_t* th_ids = (pthread_t*) malloc(sizeof(pthread_t) * BT.lines);
 
         for (int j = 0; j < BT.lines; j++) {
             int *bt_line = new int(j);
 
-            if(pthread_create(&th_ids[j], NULL, ThreadedCombineLines, bt_line)) {
+            if(pthread_create(&th_ids[j], NULL, ThreadCombineLine, bt_line)) {
                 cerr << "Failed creating thread " << j << endl;
                 pthread_exit(NULL);
             }
