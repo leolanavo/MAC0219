@@ -1,26 +1,26 @@
 #include "MatrixOpenMP.hpp"
 
-void CombineLine(int x, int y) {
-    int i = (x * BT.lines) + y;
-    int columns = BT.columns;
+void CombineLine(unsigned long long x, unsigned long long y) {
+    unsigned long long i = (x * BT.lines) + y;
+    unsigned long long columns = BT.columns;
 
-    for (int j = 0;  j < columns; j++) {
+    for (unsigned long long j = 0;  j < columns; j++) {
         combinedMatrix.data[i][j*2] = A.data[x][j];
         combinedMatrix.data[i][j*2 + 1] = BT.data[y][j];
     }
 }
 
-void ReduceLine(int line) {
+void ReduceLine(unsigned long long line) {
     double sum = 0.0;
 
-    for (int j = 0; j < m_cols; j += 2)
+    for (unsigned long long j = 0; j < m_cols; j += 2)
         sum += (double) combinedMatrix.data[line][j] * combinedMatrix.data[line][j+1];
 
     reducedMatrix.data[line/b_cols][line%b_cols] = sum;
 }
 
 void OMPCombineMatrices() {
-    int i, j;
+    unsigned long long i, j;
 
     #pragma omp parallel num_threads(A.lines) private (i, j)
     {
@@ -33,8 +33,8 @@ void OMPCombineMatrices() {
 }
 
 void OMPReduceMatrix() {
-    int i;
-    int lines = combinedMatrix.lines;
+    unsigned long long i;
+    unsigned long long lines = combinedMatrix.lines;
 
     #pragma omp parallel num_threads(combinedMatrix.lines) private(i)
     {

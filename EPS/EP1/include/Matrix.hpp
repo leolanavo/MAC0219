@@ -10,12 +10,12 @@ using namespace std;
 
 class Matrix {
     public:
-        int lines;
-        int columns;
+        unsigned long long lines;
+        unsigned long long columns;
         double** data;
 
         Matrix();
-        Matrix(int x, int y);
+        Matrix(unsigned long long x, unsigned long long y);
         Matrix(ifstream file, bool transpose);
 };
 

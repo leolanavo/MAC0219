@@ -8,11 +8,11 @@ Matrix::Matrix():
     data = NULL;
 }
 
-Matrix::Matrix(int x, int y):
+Matrix::Matrix(unsigned long long x, unsigned long long y):
     lines(x), columns(y)
 {
     data = (double**) malloc(sizeof(double*) * lines);
-    for (int i = 0; i < lines; i++) {
+    for (unsigned long long i = 0; i < lines; i++) {
         data[i] = (double*) calloc(sizeof(double), columns);
     }
 }
@@ -35,7 +35,7 @@ Matrix::Matrix(ifstream file, bool transpose) {
     }
 
     data = (double**) malloc(sizeof(double*) * lines);
-    for (int i = 0; i < lines; i++) {
+    for (unsigned long long i = 0; i < lines; i++) {
         data[i] = (double*) calloc(sizeof(double), columns);
     }
 
