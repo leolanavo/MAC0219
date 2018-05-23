@@ -4,10 +4,12 @@
 #include <vector>
 #include <iterator>
 #include <sstream>
-#include <pthread.h>
+
+#include <omp.h>
 
 #include "Matrix.hpp"
-#include "MatrixThreaded.hpp"
+#include "MatrixThread.hpp"
+#include "MatrixOpenMP.hpp"
 
 #include "globals.hpp"
 
@@ -33,33 +35,28 @@ ostream& operator<<(ostream& os, Matrix& m) {
     return os;
 }
 
-// The column of the super matrix is calculated with the j*2 and j*2 + 1
-// The line of the super matrix is calculated with the line = (i1 * m2.lines) + i2
-Matrix CombineMatrices(Matrix& m1, Matrix& m2) {
-    Matrix result = Matrix(m1.lines * m2.lines, m1.columns *  m2.columns);
+void CombineMatrices(Matrix& m1, Matrix& m2) {
+    combinedMatrix = Matrix(m1.lines * m2.lines, m1.columns *  m2.columns);
 
     for (int i1 = 0; i1 < m1.lines; i1++)
         for (int i2 = 0; i2 < m2.lines; i2++)
             for (int j = 0; j < m1.columns; j++) {
-                result.data[i1 * m2.lines + i2][j*2] = m1.data[i1][j];
-                result.data[i1 * m2.lines + i2][j*2 + 1] = m2.data[i2][j];
+                combinedMatrix.data[i1 * m2.lines + i2][j*2] = m1.data[i1][j];
+                combinedMatrix.data[i1 * m2.lines + i2][j*2 + 1] = m2.data[i2][j];
             }
-
-    return result;
 }
 
-Matrix ReduceCombinedMatrix(Matrix& m, int lines, int columns) {
-    Matrix result = Matrix(lines, columns);
+
+void ReduceCombinedMatrix(Matrix& m, int lines, int columns) {
+    reducedMatrix = Matrix(lines, columns);
 
     int val;
     for (int i = 0; i < m.lines; i++) {
         val = 0;
         for (int j = 0; j < m.columns; j += 2)
             val += m.data[i][j] * m.data[i][j+1];
-        result.data[i/columns][i%columns] = val;
+        reducedMatrix.data[i/columns][i%columns] = val;
     }
-
-    return result;
 }
 
 int main(int argc, char* argv[]) {
@@ -68,19 +65,22 @@ int main(int argc, char* argv[]) {
     A = Matrix(ifstream(argv[1]), false);
     BT = Matrix(ifstream(argv[2]), true);
 
-    cout << A << endl;
-    cout << BT << endl;
-
-    ThreadedCombineMatrices();
-    cout << combinedMatrix << endl;
-
     reducedMatrix = Matrix(A.lines, BT.lines);
+    combinedMatrix = Matrix(A.lines * BT.lines, A.columns * BT.columns);
 
     b_cols = BT.lines;
     m_cols = combinedMatrix.columns;
 
-    ThreadedReduceCombinedMatrix(BT.lines);
+    if (stoi(argv[3]) == 1) {
+        ThreadCombineMatrices();
+        ThreadReduceMatrix();
+    }
+    else if (atoi(argv[3]) == 2) {
+        OMPCombineMatrices();
+        OMPReduceMatrix();
+    }
 
+    cout << combinedMatrix << endl;
     cout << reducedMatrix;
 
     return 0;

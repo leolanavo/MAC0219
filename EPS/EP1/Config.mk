@@ -14,5 +14,5 @@ BIN       := ep1
 TARF      := leonardo.lana.joao.daniel
 FINALDIR  := leonardo.lana.joao.daniel
 
-CFLAGS    := -std=c++1z
+CFLAGS    := -std=c++1z -fopenmp
 LDFLAGS   := -I $(INCDIR) -lpthread
