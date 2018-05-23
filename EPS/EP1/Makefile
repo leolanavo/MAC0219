@@ -48,14 +48,14 @@ all: $(addprefix $(BINDIR)/,$(BIN))
 debug: CFLAGS += $(TESTFLAGS)
 debug: $(addprefix $(TSTDIR)/,$(BIN))
 
-.PHONY: runo
-runo: all
-runo: 
+.PHONY: openmp
+openmp: all
+openmp: 
 	./bin/ep1 o txt/matrix1.txt txt/matrix2.txt
 
-.PHONY: runp
-runp: all
-runp: 
+.PHONY: pthread
+pthread: all
+pthread: 
 	./bin/ep1 p txt/matrix1.txt txt/matrix2.txt
 
 # Compile each one of the binaries
