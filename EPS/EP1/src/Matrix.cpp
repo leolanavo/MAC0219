@@ -11,9 +11,9 @@ Matrix::Matrix():
 Matrix::Matrix(int x, int y):
     lines(x), columns(y)
 {
-    data = (float**) malloc(sizeof(float*) * lines);
+    data = (double**) malloc(sizeof(double*) * lines);
     for (int i = 0; i < lines; i++) {
-        data[i] = (float*) calloc(sizeof(float), columns);
+        data[i] = (double*) calloc(sizeof(double), columns);
     }
 }
 
@@ -34,9 +34,9 @@ Matrix::Matrix(ifstream file, bool transpose) {
         exit(1);
     }
 
-    data = (float**) malloc(sizeof(float*) * lines);
+    data = (double**) malloc(sizeof(double*) * lines);
     for (int i = 0; i < lines; i++) {
-        data[i] = (float*) calloc(sizeof(float), columns);
+        data[i] = (double*) calloc(sizeof(double), columns);
     }
 
     int i, j;

@@ -5,10 +5,10 @@ int line;
 void* ThreadReduceLine(void* line_arg) {
     int line = *((int *) line_arg);
 
-    float sum = 0.0;
+    double sum = 0.0;
 
     for (int j = 0; j < m_cols; j += 2)
-        sum += combinedMatrix.data[line][j] * combinedMatrix.data[line][j+1];
+        sum += (double) combinedMatrix.data[line][j] * combinedMatrix.data[line][j+1];
 
     reducedMatrix.data[line/b_cols][line%b_cols] = sum;
 

@@ -55,7 +55,6 @@ void CombineMatrices(Matrix& m1, Matrix& m2) {
             }
 }
 
-
 void ReduceCombinedMatrix(Matrix& m, int lines, int columns) {
     reducedMatrix = Matrix(lines, columns);
 
