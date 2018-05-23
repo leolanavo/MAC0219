@@ -3,6 +3,11 @@
 
 #include "Matrix.hpp"
 
+#define ARG_IMP  1
+#define ARG_INF1 2
+#define ARG_INF2 3
+#define ARG_OUTF 4
+
 extern int b_cols;
 extern int m_cols;
 

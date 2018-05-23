@@ -62,8 +62,8 @@ void ReduceCombinedMatrix(Matrix& m, int lines, int columns) {
 int main(int argc, char* argv[]) {
     string line;
 
-    A = Matrix(ifstream(argv[1]), false);
-    BT = Matrix(ifstream(argv[2]), true);
+    A = Matrix(ifstream(argv[ARG_INF1]), false);
+    BT = Matrix(ifstream(argv[ARG_INF2]), true);
 
     reducedMatrix = Matrix(A.lines, BT.lines);
     combinedMatrix = Matrix(A.lines * BT.lines, A.columns * BT.columns);
@@ -71,11 +71,11 @@ int main(int argc, char* argv[]) {
     b_cols = BT.lines;
     m_cols = combinedMatrix.columns;
 
-    if (stoi(argv[3]) == 1) {
+    if (argv[ARG_IMP][0] == 'o') {
         ThreadCombineMatrices();
         ThreadReduceMatrix();
     }
-    else if (atoi(argv[3]) == 2) {
+    else if (argv[ARG_IMP][0] == 'p') {
         OMPCombineMatrices();
         OMPReduceMatrix();
     }
