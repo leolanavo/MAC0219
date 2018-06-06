@@ -2,22 +2,17 @@
 
 using namespace std;
 
-Matrix::Matrix():
-    lines(0), columns(0)
-{
-    data = NULL;
-}
-
-Matrix::Matrix(unsigned long long x, unsigned long long y):
+Matrix::Matrix(size_t x, size_t y):
     lines(x), columns(y)
 {
-    data = (double**) malloc(sizeof(double*) * lines);
-    for (unsigned long long i = 0; i < lines; i++) {
-        data[i] = (double*) calloc(sizeof(double), columns);
+    data = new double*[lines];
+    for (size_t i = 0; i < lines; i++) {
+        data[i] = new double[columns];
     }
 }
 
-Matrix::Matrix(ifstream file, bool transpose) {
+Matrix::Matrix(const char *filename, bool transpose) {
+    ifstream file(filename);
     string line;
 
     if (file.is_open()) {
@@ -34,9 +29,9 @@ Matrix::Matrix(ifstream file, bool transpose) {
         exit(1);
     }
 
-    data = (double**) malloc(sizeof(double*) * lines);
-    for (unsigned long long i = 0; i < lines; i++) {
-        data[i] = (double*) calloc(sizeof(double), columns);
+    data = new double*[lines];
+    for (size_t i = 0; i < lines; i++) {
+        data[i] = new double[columns];
     }
 
     int i, j;
@@ -44,8 +39,8 @@ Matrix::Matrix(ifstream file, bool transpose) {
         istringstream iss(line);
 
         if (transpose)
-            iss >> j >> i >> this->data[i][j];
+            iss >> j >> i >> this->data[i-1][j-1];
         else
-            iss >> i >> j >> this->data[i][j];
+            iss >> i >> j >> this->data[i-1][j-1];
     }
 }

@@ -8,8 +8,8 @@
 #define ARG_INF2 3
 #define ARG_OUTF 4
 
-extern unsigned long long b_cols;
-extern unsigned long long m_cols;
+extern size_t b_cols;
+extern size_t m_cols;
 
 extern Matrix combinedMatrix;
 extern Matrix reducedMatrix;

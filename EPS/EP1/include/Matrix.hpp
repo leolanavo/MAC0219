@@ -10,13 +10,13 @@ using namespace std;
 
 class Matrix {
     public:
-        unsigned long long lines;
-        unsigned long long columns;
-        double** data;
+        Matrix() = default;
+        Matrix(size_t x, size_t y);
+        Matrix(const char *filename, bool transpose);
 
-        Matrix();
-        Matrix(unsigned long long x, unsigned long long y);
-        Matrix(ifstream file, bool transpose);
+        size_t lines = 0;
+        size_t columns = 0;
+        double** data = nullptr;
 };
 
 #endif

@@ -51,12 +51,12 @@ debug: $(addprefix $(TSTDIR)/,$(BIN))
 .PHONY: openmp
 openmp: all
 openmp: 
-	./bin/ep1 o txt/matrix1.txt txt/matrix2.txt
+	./bin/ep1 o txt/matrix10x10_1.txt txt/matrix10x10_2.txt ./out.txt
 
 .PHONY: pthread
 pthread: all
 pthread: 
-	./bin/ep1 p txt/matrix1.txt txt/matrix2.txt
+	./bin/ep1 p txt/matrix10x10_1.txt txt/matrix10x10_2.txt ./out.txt
 
 # Compile each one of the binaries
 define bin-factory
