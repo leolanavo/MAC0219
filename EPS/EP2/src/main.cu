@@ -50,7 +50,6 @@ void set_device_v(int number_of_matrices, std::vector<int>& host_v, void*& devic
     cudaMemcpy(device_v, host_v.data(), block_size, cudaMemcpyHostToDevice);
 }
 
-
 __global__ void reduce_block(void* m) {
     int* m_int = (int*) m;
     int index = (BLOCK_ITEMS * blockIdx.x) + threadIdx.x;
@@ -70,24 +69,21 @@ __global__ void reduce_block(void* m) {
         __syncthreads();
     }
 
-    if (threadIdx.x == 0) {
+    if (threadIdx.x == 0)
         m_int[index] = m_shared[0];
-        printf("reduzido: %d no bloco: %d indice: %d\n", m_shared[0], blockIdx.x, index);
-    }
 }
 
 __global__ void compress_block(void* v, int number_of_matrices, int offset) {
     int* v_int = (int*) v;
 
     int index_compressed =
-        (blockIdx.x * number_of_matrices) + threadIdx.x + offset;
+        (blockIdx.x * number_of_matrices) + threadIdx.x +
+        (offset * BLOCK_SIZE);
 
     int index_expanded =
-        (blockIdx.x * number_of_matrices) + threadIdx.x * BLOCK_ITEMS + offset;
+        (blockIdx.x * number_of_matrices) + threadIdx.x * BLOCK_ITEMS +
+        (offset * BLOCK_ITEMS * BLOCK_SIZE);
 
-    /* printf("COMPRIMINDO BLOCO: %d from %d to %d, com bX = %d | tX = %d\n", */
-            /* v_int[index_expanded], index_expanded, index_compressed, */
-            /* blockIdx.x, threadIdx.x); */
     v_int[index_compressed] = v_int[index_expanded];
     __syncthreads();
 }
@@ -149,7 +145,7 @@ int main(int argc, char* argv[]) {
         // Compression
         int threads_per_block = (number_of_blocks < BLOCK_SIZE)?
             number_of_blocks : BLOCK_SIZE;
-        for (int i = 0; i < k; i += BLOCK_ITEMS * BLOCK_SIZE)
+        for (int i = 0; i < number_of_blocks >> 10; i++)
             compress_block<<< ELEMENTS, threads_per_block >>> (device_v, k, i);
 
         for (int i = 1; i < ELEMENTS && number_of_blocks > 1; i++)
