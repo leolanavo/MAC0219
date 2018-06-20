@@ -4,73 +4,162 @@
 #include <fstream>
 #include <string>
 #include <climits>
+#include <cmath>
 
 const int DIMENSION = 3;
-const int BLOCK_SIE = 1024;
+const int BLOCK_SIZE = 1024;
+const int BLOCK_ITEMS = 2048;
+const int EXPONENT = 11;
 const int DEVICE_ID = 0;
+const int ELEMENTS = DIMENSION * DIMENSION;
 
-#define Matrix std::vector<std::vector<int>>
-
-std::ostream& operator<<(std::ostream& os, Matrix m) {
-    for (auto line = m.begin(); line != m.end(); line++) {
-        for (auto item = (*line).begin(); item != (*line).end(); item++) {
-            os << *(item) << " ";
-        }
-        os << std::endl;
-    }
-    return os;
-}
-
-void add_infinite(Matrix& m) {
-    for (int i = 0; i < DIMENSION*DIMENSION; i++)
-        m[i].push_back(INT_MAX);
-}
-
-void read_file(std::ifstream& file, const int number_of_matrices, Matrix& m) {
+void read_file(std::ifstream& file, const int number_of_matrices,
+        const int number_of_matrices_std, std::vector<int>& v) {
     int first, second, third;
-    std::string line;
+    std::string dump;
 
     for (int k = 0; k < number_of_matrices; k++) {
-        // This is used to throw away the line of asterisks
-        file >> line;
+        file >> dump;
 
-        for (int i = 0; i < DIMENSION; i++) {
+        for (int i = 0; i < ELEMENTS; i += DIMENSION) {
             file >> first >> second >> third;
-
-            m[(i * DIMENSION)].push_back(first);
-            m[(i * DIMENSION) + 1].push_back(second);
-            m[(i * DIMENSION) + 2].push_back(third);
+            v[(number_of_matrices_std * i) + k] = first;
+            v[(number_of_matrices_std * (i + 1)) + k] = second;
+            v[(number_of_matrices_std * (i + 2)) + k] = third;
         }
     }
 }
 
-int set_host_matrix(std::ifstream& file, Matrix& m) {
+std::vector<int> set_host_v(char* filename) {
     int number_of_matrices;
+    std::ifstream file(filename);
 
-    if (input_file.is_open())
-        input_file >> number_of_matrices;
+    if (file.is_open()) file >> number_of_matrices;
 
-    read_file(input_file, number_of_matrices, matrices_host);
-    if (number_of_matrices % 2 != 0) add_infinite(matrices_host);
+    int number_of_matrices_std = ceil(number_of_matrices / (double) BLOCK_ITEMS) * BLOCK_ITEMS;
+    std::vector<int> v (ELEMENTS * number_of_matrices_std, INT_MAX);
+    read_file(file, number_of_matrices, number_of_matrices_std, v);
 
-    return number_of_matrices;
+    file.close();
+    return v;
 }
 
-void set_device_matrix(int number_of_matrices, Matrix& device_matrix, Matrix& host_matrix) {
-    cudaSetDevice(DEVICE_ID);
+void set_device_v(int number_of_matrices, std::vector<int>& host_v, void*& device_v) {
+    int block_size = ELEMENTS * number_of_matrices * sizeof(int);
+    cudaMalloc(&device_v, block_size);
+    cudaMemcpy(device_v, host_v.data(), block_size, cudaMemcpyHostToDevice);
+}
 
-    for (int i = 0; i < DIMENSION * DIMENSION; i++) {
-        cudaMalloc((void**) matrices_device[i], number_of_matrices);
-        cudaMemcpy(device_matrix[i], host_matrix[i], cudaMemcpyHostToDevice);
+
+__global__ void reduce_block(void* m) {
+    int* m_int = (int*) m;
+    int index = (BLOCK_ITEMS * blockIdx.x) + threadIdx.x;
+    __shared__ int m_shared[BLOCK_ITEMS];
+
+    m_shared[threadIdx.x] = m_int[index];
+    m_shared[BLOCK_SIZE + threadIdx.x] = m_int[BLOCK_SIZE + index];
+
+    for (int block_size = BLOCK_ITEMS; block_size > 1; block_size >>= 1) {
+        int index_1 = threadIdx.x;
+        int index_2 = index_1 + (block_size / 2);
+
+        if (threadIdx.x >= (block_size >> 1))
+            return;
+
+        m_shared[index_1] = min(m_shared[index_1], m_shared[index_2]);
+        __syncthreads();
+    }
+
+    if (threadIdx.x == 0) {
+        m_int[index] = m_shared[0];
+        printf("reduzido: %d no bloco: %d indice: %d\n", m_shared[0], blockIdx.x, index);
+    }
+}
+
+__global__ void compress_block(void* v, int number_of_matrices, int offset) {
+    int* v_int = (int*) v;
+
+    int index_compressed =
+        (blockIdx.x * number_of_matrices) + threadIdx.x + offset;
+
+    int index_expanded =
+        (blockIdx.x * number_of_matrices) + threadIdx.x * BLOCK_ITEMS + offset;
+
+    /* printf("COMPRIMINDO BLOCO: %d from %d to %d, com bX = %d | tX = %d\n", */
+            /* v_int[index_expanded], index_expanded, index_compressed, */
+            /* blockIdx.x, threadIdx.x); */
+    v_int[index_compressed] = v_int[index_expanded];
+    __syncthreads();
+}
+
+__global__ void compress_line(void* v, int line,
+        int number_of_blocks, int next_number_of_blocks) {
+
+    int index_expanded_1 = line * number_of_blocks * BLOCK_ITEMS + threadIdx.x;
+    int index_compressed_1 = line * next_number_of_blocks * BLOCK_ITEMS + threadIdx.x;
+
+    int index_expanded_2 = line * number_of_blocks * BLOCK_ITEMS +
+        BLOCK_SIZE + threadIdx.x;
+    int index_compressed_2 = line * next_number_of_blocks * BLOCK_ITEMS +
+        BLOCK_SIZE + threadIdx.x;
+
+    int* v_int = (int*) v;
+    v_int[index_compressed_1] = v_int[index_expanded_1];
+    v_int[index_compressed_2] = v_int[index_expanded_2];
+}
+
+__global__ void final_compress(void* v, int number_of_matrices) {
+    int* v_int = (int*) v;
+    for (int i = 0; i < ELEMENTS; i++) {
+        v_int[i] = v_int[i * BLOCK_ITEMS];
+    }
+}
+
+void print_result_matrix(void* device_v) {
+    int result[ELEMENTS];
+
+    cudaMemcpy((void*)result, device_v, ELEMENTS * sizeof(int), cudaMemcpyDeviceToHost);
+
+    for (int i = 0; i < ELEMENTS; i++) {
+        std::cout << result[i];
+        if ((i + 1) % DIMENSION) std::cout << " ";
+        else std::cout << std::endl;
     }
 }
 
 int main(int argc, char* argv[]) {
-    Matrix host_matrix (DIMENSION * DIMENSION);
-    Matrix device_matrix (DIMENSION * DIMENSION);
+    void* device_v;
+    cudaSetDevice(DEVICE_ID);
 
-    int number_of_matrices = set_host_matrix(std::ifstream(argv[1]), host_matrix);
-    set_host_matrix(number_of_matrices, device_matrix, host_matrix);
+    std::vector<int> host_v = set_host_v(argv[1]);
+    int number_of_matrices = host_v.size() / ELEMENTS;
 
+    set_device_v(number_of_matrices, host_v, device_v);
+
+    for (int k = number_of_matrices; k > 1; k >>= EXPONENT) {
+        k = ceil(k / (double) BLOCK_ITEMS) * BLOCK_ITEMS;
+
+        // Reduction
+        int number_of_blocks = k >> EXPONENT;
+        reduce_block<<< number_of_blocks * ELEMENTS, BLOCK_SIZE >>>(device_v);
+
+        int next_number_of_blocks = ceil (number_of_blocks / (double) BLOCK_ITEMS);
+        /* std::cout << next_number_of_blocks << " " << number_of_blocks << std::endl; */
+
+        // Compression
+        int threads_per_block = (number_of_blocks < BLOCK_SIZE)?
+            number_of_blocks : BLOCK_SIZE;
+        for (int i = 0; i < k; i += BLOCK_ITEMS * BLOCK_SIZE)
+            compress_block<<< ELEMENTS, threads_per_block >>> (device_v, k, i);
+
+        for (int i = 1; i < ELEMENTS && number_of_blocks > 1; i++)
+            compress_line<<< 1, BLOCK_SIZE >>>
+                (device_v, i, number_of_blocks, next_number_of_blocks);
+    }
+
+    final_compress<<<1,1>>>(device_v, number_of_matrices);
+    print_result_matrix(device_v);
+
+    cudaDeviceReset();
     return(0);
 }
