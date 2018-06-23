@@ -14,8 +14,10 @@ armazenamos da seguinte forma:
     A(3,3), B(3,3), C(3,3) D1(3,3), ..., D2045(3,3)
 ]
 
-Este vetor então é passado para o device. Então são lançadas 1024 threads no device,
+Este vetor então é passado para o device. Um fator relevante de se destacar é 
+que, dentro do device, foi utilizada a memória compartilhada, uma vez que essa
+se mostrou a melhor opção. Então são lançadas 1024 threads no device,
 cada uma responsável pela redução de um bloco, que paulatinamente vai reduzindo.
 Ou seja, 1024 threads resolvem, cada uma, um par, depois 512 thread resolvem,
-cada uma, outro par, e assim por diante até que tenha sido reduzido o bloco
-em questão.
+cada uma, outro par, e assim por diante, até que tenha sido reduzido o bloco
+em questão. 
